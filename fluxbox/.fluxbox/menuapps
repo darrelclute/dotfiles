@@ -1,0 +1,319 @@
+	[submenu] (Applications) <> 
+		[submenu] (Accessories) <> 
+			[exec] (Akonaditray) {akonaditray} </usr/share/icons/hicolor/64x64/apps/akonaditray.png> 
+			[exec] (AllTray) {alltray} </usr/share/pixmaps/alltray.png> 
+			[exec] (Archive Manager) {file-roller} </usr/share/icons/hicolor/48x48/apps/file-roller.png> 
+			[exec] (Ark) {ark} </usr/share/icons/hicolor/48x48/apps/ark.png> 
+			[exec] (Calculator) {gnome-calculator} <> 
+			[exec] (Character Map) {gucharmap} <> 
+			[exec] (Disks) {gnome-disks} </usr/share/icons/hicolor/48x48/apps/gnome-disks.png> 
+			[exec] (Eekboard) {eekboard} </usr/share/icons/hicolor/48x48/apps/eekboard.png> 
+			[exec] (Indic Onscreen Keyboard) {iok} </usr/share/icons/hicolor/48x48/apps/iok.png> 
+			[exec] (Jovie) {jovie} <> 
+			[exec] (KAlarm) {kalarm} </usr/share/icons/hicolor/48x48/apps/kalarm.png> 
+			[exec] (KCalc) {kcalc} <> 
+			[exec] (KCharSelect) {kcharselect} <> 
+			[exec] (KGpg) {kgpg} </usr/share/icons/hicolor/48x48/apps/kgpg.png> 
+			[exec] (KJots) {kjots} </usr/share/icons/hicolor/48x48/apps/kjots.png> 
+			[exec] (KMag) {kmag} </usr/share/icons/hicolor/32x32/apps/kmag.png> 
+			[exec] (KMail Import Wizard) {importwizard} </usr/share/icons/hicolor/64x64/apps/kontact-import-wizard.png> 
+			[exec] (KMouseTool) {kmousetool} </usr/share/icons/hicolor/32x32/apps/kmousetool.png> 
+			[exec] (KMouth) {kmouth} </usr/share/icons/hicolor/48x48/apps/kmouth.png> 
+			[exec] (KNotes) {knotes} </usr/share/icons/hicolor/48x48/apps/knotes.png> 
+			[exec] (KTimeTracker) {ktimetracker} </usr/share/icons/hicolor/48x48/apps/ktimetracker.png> 
+			[exec] (Kate) {kate} </usr/share/icons/hicolor/48x48/apps/kate.png> 
+			[exec] (Kerberos Authentication) {krb5-auth-dialog} </usr/share/icons/hicolor/48x48/status/krb-valid-ticket.png> 
+			[exec] (Kleopatra) {kleopatra} </usr/share/icons/hicolor/48x48/apps/kleopatra.png> 
+			[exec] (Krecipes) {krecipes} </usr/share/icons/hicolor/48x48/apps/krecipes.png> 
+			[exec] (Krusader) {krusader} </usr/share/icons/hicolor/48x48/apps/krusader_user.png> 
+			[exec] (Passwords and Keys) {/usr/bin/seahorse} </usr/share/icons/hicolor/48x48/apps/seahorse.png> 
+			[exec] (Screen Reader) {orca} </usr/share/icons/hicolor/48x48/apps/orca.png> 
+			[exec] (Screenshot) {gnome-screenshot} <> 
+			[exec] (Search for Files...) {gnome-search-tool} <> 
+			[exec] (Vi IMproved) {gvim} </usr/share/icons/hicolor/48x48/apps/gvim.png> 
+			[exec] (gedit) {gedit} <> 
+		[end]
+		[submenu] (Chrome Apps) </usr/share/icons/hicolor/48x48/apps/google-chrome.png> 
+			[exec] (VNC Viewer for Google Chrome) {/opt/google/chrome/google-chrome} </home/darrel/.local/share/icons/hicolor/128x128/apps/chrome-iabmpiboiopbgfabjmgeedhcmjenhbla-Default.png> 
+		[end]
+		[submenu] (Education) <> 
+			[exec] (Marble) {marble} </usr/share/icons/hicolor/48x48/apps/marble.png> 
+		[end]
+		[submenu] (Games) <> 
+			[exec] (AisleRiot Solitaire) {sol} </usr/share/icons/hicolor/48x48/apps/gnome-aisleriot.png> 
+			[exec] (Bomber) {bomber} </usr/share/icons/hicolor/48x48/apps/bomber.png> 
+			[exec] (Bovo) {bovo} </usr/share/icons/hicolor/48x48/apps/bovo.png> 
+			[exec] (Granatier) {granatier} </usr/share/icons/hicolor/48x48/apps/granatier.png> 
+			[exec] (Iagno) {iagno} </usr/share/icons/hicolor/48x48/apps/iagno.png> 
+			[exec] (KAtomic) {katomic} </usr/share/icons/hicolor/48x48/apps/katomic.png> 
+			[exec] (KBlackBox) {kblackbox} </usr/share/icons/hicolor/48x48/apps/kblackbox.png> 
+			[exec] (KBlocks) {kblocks} </usr/share/icons/hicolor/48x48/apps/kblocks.png> 
+			[exec] (KBounce) {kbounce} </usr/share/icons/hicolor/48x48/apps/kbounce.png> 
+			[exec] (KBreakOut) {kbreakout} </usr/share/icons/hicolor/48x48/apps/kbreakout.png> 
+			[exec] (KDiamond) {kdiamond} </usr/share/icons/hicolor/48x48/apps/kdiamond.png> 
+			[exec] (KFourInLine) {kfourinline} </usr/share/icons/hicolor/48x48/apps/kfourinline.png> 
+			[exec] (KGoldrunner) {kgoldrunner} </usr/share/icons/hicolor/48x48/apps/kgoldrunner.png> 
+			[exec] (KJumpingCube) {kjumpingcube} </usr/share/icons/hicolor/48x48/apps/kjumpingcube.png> 
+			[exec] (KMahjongg) {kmahjongg} </usr/share/icons/hicolor/48x48/apps/kmahjongg.png> 
+			[exec] (KMines) {kmines} </usr/share/icons/hicolor/48x48/apps/kmines.png> 
+			[exec] (KNetWalk) {knetwalk} </usr/share/icons/hicolor/48x48/apps/knetwalk.png> 
+			[exec] (KPatience) {kpat} </usr/share/icons/hicolor/48x48/apps/kpat.png> 
+			[exec] (KReversi) {kreversi} </usr/share/icons/hicolor/48x48/apps/kreversi.png> 
+			[exec] (KSnake) {ktron} </usr/share/icons/hicolor/48x48/apps/kdesnake.png> 
+			[exec] (KSnakeDuel) {ktron} </usr/share/icons/hicolor/48x48/apps/ktron.png> 
+			[exec] (KSpaceDuel) {kspaceduel} </usr/share/icons/hicolor/48x48/apps/kspaceduel.png> 
+			[exec] (KSquares) {ksquares} </usr/share/icons/hicolor/48x48/apps/ksquares.png> 
+			[exec] (KSudoku) {ksudoku} </usr/share/icons/hicolor/128x128/apps/ksudoku.png> 
+			[exec] (Kajongg) {kajongg} </usr/share/icons/hicolor/48x48/apps/kajongg.png> 
+			[exec] (Kapman) {kapman} </usr/share/icons/hicolor/48x48/apps/kapman.png> 
+			[exec] (Kigo) {kigo} </usr/share/icons/hicolor/48x48/apps/kigo.png> 
+			[exec] (Killbots) {killbots} </usr/share/icons/hicolor/48x48/apps/killbots.png> 
+			[exec] (Kiriki) {kiriki} </usr/share/icons/hicolor/48x48/apps/kiriki.png> 
+			[exec] (Klickety) {klickety} </usr/share/icons/hicolor/48x48/apps/klickety.png> 
+			[exec] (Kolf) {kolf} </usr/share/icons/hicolor/48x48/apps/kolf.png> 
+			[exec] (Kollision) {kollision} </usr/share/icons/hicolor/48x48/apps/kollision.png> 
+			[exec] (Kolor Lines) {klines} </usr/share/icons/hicolor/48x48/apps/klines.png> 
+			[exec] (Konquest) {konquest} </usr/share/icons/hicolor/48x48/apps/konquest.png> 
+			[exec] (KsirK) {ksirk} </usr/share/icons/hicolor/48x48/apps/ksirk.png> 
+			[exec] (KsirK Skin Editor) {ksirkskineditor} <> 
+			[exec] (Kubrick) {kubrick} </usr/share/icons/hicolor/48x48/apps/kubrick.png> 
+			[exec] (LSkat) {lskat} </usr/share/icons/hicolor/48x48/apps/lskat.png> 
+			[exec] (Mines) {gnome-mines} </usr/share/icons/hicolor/48x48/apps/gnome-mines.png> 
+			[exec] (Naval Battle) {knavalbattle} </usr/share/icons/hicolor/48x48/apps/knavalbattle.png> 
+			[exec] (Palapeli) {palapeli} </usr/share/icons/hicolor/48x48/apps/palapeli.png> 
+			[exec] (Potato Guy) {ktuberling} </usr/share/icons/hicolor/48x48/apps/ktuberling.png> 
+			[exec] (SameGame) {klickety} </usr/share/icons/hicolor/48x48/apps/ksame.png> 
+			[exec] (Shisen-Sho) {kshisen} </usr/share/icons/hicolor/48x48/apps/kshisen.png> 
+			[exec] (Steam) {/usr/bin/steam} </usr/share/pixmaps/steam.png> 
+			[exec] (Sudoku) {gnome-sudoku} </usr/share/icons/hicolor/48x48/apps/gnome-sudoku.png> 
+			[exec] (Swell Foop) {swell-foop} </usr/share/icons/hicolor/48x48/apps/swell-foop.png> 
+			[exec] (WineMine) {winemine} </usr/share/icons/hicolor/scalable/apps/winemine.svg> 
+			[exec] (picmi) {picmi} </usr/share/icons/hicolor/48x48/apps/picmi.png> 
+		[end]
+		[submenu] (Graphics) <> 
+			[exec] (AcquireImages) {scangui} <> 
+			[exec] (Blender) {blender} </usr/share/icons/hicolor/48x48/apps/blender.png> 
+			[exec] (CinePaint) {cinepaint-remote} </usr/share/pixmaps/cinepaint.png> 
+			[exec] (DNGConverter) {dngconverter} </usr/share/icons/hicolor/48x48/apps/kipi-dngconverter.png> 
+			[exec] (Dia Diagram Editor) {dia} </usr/share/icons/hicolor/48x48/apps/dia.png> 
+			[exec] (Document Viewer) {evince} </usr/share/icons/hicolor/48x48/apps/evince.png> 
+			[exec] (Entangle) {entangle} </usr/share/entangle/entangle.svg> 
+			[exec] (ExpoBlending) {expoblending} </usr/share/icons/hicolor/48x48/apps/kipi-expoblending.png> 
+			[exec] (Flickr Uploader) {postr} </usr/share/icons/hicolor/scalable/apps/postr.svg> 
+			[exec] (FontForge) {fontforge} </usr/share/icons/hicolor/scalable/apps/fontforge.svg> 
+			[exec] (Fontmatrix) {fontmatrix} </usr/share/icons/hicolor/48x48/apps/fontmatrix.png> 
+			[exec] (GNU Image Manipulation Program) {gimp-2.8} </usr/share/icons/hicolor/48x48/apps/gimp.png> 
+			[exec] (Gwenview) {gwenview} </usr/share/icons/hicolor/48x48/apps/gwenview.png> 
+			[exec] (Hugin Batch Processor) {PTBatcherGUI} </usr/share/pixmaps/ptbatcher.png> 
+			[exec] (Hugin Calibrate Lens) {calibrate_lens_gui} </usr/share/pixmaps/hugin.png> 
+			[exec] (Hugin Panorama Creator) {hugin} </usr/share/pixmaps/hugin.png> 
+			[exec] (Image Viewer) {eog} </usr/share/icons/hicolor/scalable/apps/eog.svg> 
+			[exec] (Inkscape) {inkscape} </usr/share/icons/hicolor/48x48/apps/inkscape.png> 
+			[exec] (KColorChooser) {kcolorchooser} </usr/share/icons/hicolor/22x22/apps/kcolorchooser.png> 
+			[exec] (KPhotoAlbum) {kphotoalbum} </usr/share/icons/hicolor/48x48/apps/kphotoalbum.png> 
+			[exec] (KRuler) {kruler} </usr/share/icons/hicolor/48x48/apps/kruler.png> 
+			[exec] (KSnapshot) {ksnapshot} </usr/share/icons/hicolor/48x48/apps/ksnapshot.png> 
+			[exec] (Kamoso) {kamoso} </usr/share/icons/hicolor/48x48/apps/kamoso.png> 
+			[exec] (Karbon) {karbon} </usr/share/icons/hicolor/48x48/apps/calligrakarbon.png> 
+			[exec] (KolourPaint) {kolourpaint} </usr/share/icons/hicolor/48x48/apps/kolourpaint.png> 
+			[exec] (Krita) {krita} </usr/share/icons/hicolor/48x48/apps/calligrakrita.png> 
+			[exec] (Krita Gemini) {kritagemini} </usr/share/icons/hicolor/48x48/apps/calligrakrita.png> 
+			[exec] (Krita Sketch) {kritasketch} </usr/share/icons/hicolor/48x48/apps/calligrakrita.png> 
+			[exec] (LibreOffice Draw) {libreoffice} </usr/share/icons/hicolor/48x48/apps/libreoffice-draw.png> 
+			[exec] (MyPaint) {mypaint} </usr/share/icons/hicolor/48x48/apps/mypaint.png> 
+			[exec] (Okular) {okular} </usr/share/icons/hicolor/48x48/apps/okular.png> 
+			[exec] (Open in RAW editor) {open-raw.pl} </usr/share/icons/hicolor/48x48/actions/open-raw.png> 
+			[exec] (Panorama) {panoramagui} </usr/share/icons/hicolor/48x48/apps/kipi-panorama.png> 
+			[exec] (Photo Layouts Editor) {photolayoutseditor} </usr/share/icons/hicolor/48x48/apps/photolayoutseditor.png> 
+			[exec] (Pinta) {pinta} </usr/share/pixmaps/pinta.xpm> 
+			[exec] (QCad) {qcad} </usr/share/pixmaps/qcad.xpm> 
+			[exec] (RawTherapee) {rawtherapee} </usr/share/icons/hicolor/48x48/apps/rawtherapee.png> 
+			[exec] (Scribus) {scribus} </usr/share/pixmaps/scribus.png> 
+			[exec] (Shotwell) {shotwell} </usr/share/icons/hicolor/48x48/apps/shotwell.png> 
+			[exec] (Simple Scan) {simple-scan} <> 
+			[exec] (UFRaw) {ufraw} </usr/share/pixmaps/ufraw.png> 
+			[exec] (Xlock) {xlock} <> 
+			[exec] (digiKam) {digikam} </usr/share/icons/hicolor/48x48/apps/digikam.png> 
+			[exec] (showFoto) {showfoto} </usr/share/icons/hicolor/48x48/apps/showfoto.png> 
+		[end]
+		[submenu] (Internet) <> 
+			[submenu] (Cisco AnyConnect Secure Mobility Client) <> 
+				[exec] (Cisco Anyconnect Secure Mobility Client) {/opt/cisco/anyconnect/bin/vpnui} </opt/cisco/anyconnect/pixmaps/vpnui48.png> 
+			[end]
+			[submenu] (NoMachine) </usr/share/icons/hicolor/48x48/apps/NoMachine-icon.png> 
+				[exec] (NoMachine Help on the Web) {xdg-open} </usr/share/icons/hicolor/48x48/apps/firefox.png> 
+				[exec] (NoMachine Player) {"/usr/NX/bin/nxplayer"} </usr/share/icons/hicolor/48x48/apps/NoMachine-icon.png> 
+			[end]
+			[exec] (Akregator) {akregator} </usr/share/icons/hicolor/48x48/apps/akregator.png> 
+			[exec] (Blogilo) {blogilo} </usr/share/icons/hicolor/48x48/apps/blogilo.png> 
+			[exec] (BlueDevil) {bluedevil-monolithic} <> 
+			[exec] (Choqok) {choqok} </usr/share/icons/hicolor/48x48/apps/choqok.png> 
+			[exec] (Contact Theme Editor) {contactthemeeditor} </usr/share/icons/hicolor/48x48/apps/kaddressbook.png> 
+			[exec] (Ekiga Softphone) {ekiga} </usr/share/icons/hicolor/48x48/apps/ekiga.png> 
+			[exec] (Firefox) {firefox} </usr/share/icons/hicolor/48x48/apps/firefox.png> 
+			[exec] (Google Chrome (beta)) {/usr/bin/google-chrome-beta} </usr/share/icons/hicolor/48x48/apps/google-chrome.png> 
+			[exec] (Google Chrome (beta)) {/usr/bin/google-chrome-beta} </usr/share/icons/hicolor/48x48/apps/google-chrome.png> 
+			[exec] (Google Music Manager) {/opt/google/musicmanager/google-musicmanager} </usr/share/icons/hicolor/48x48/apps/google-musicmanager.png> 
+			[exec] (KDE IM Contacts) {ktp-contactlist} </usr/share/icons/hicolor/48x48/apps/telepathy-kde.png> 
+			[exec] (KDE IM Log Viewer) {ktp-log-viewer} <> 
+			[exec] (KGet) {kget} </usr/share/icons/hicolor/48x48/apps/kget.png> 
+			[exec] (KMail) {kmail} </usr/share/icons/hicolor/48x48/apps/kmail.png> 
+			[exec] (KMail Header Theme Editor) {headerthemeeditor} </usr/share/icons/hicolor/48x48/apps/kmail.png> 
+			[exec] (KNode) {knode} </usr/share/icons/hicolor/48x48/apps/knode.png> 
+			[exec] (KRDC) {krdc} </usr/share/icons/hicolor/48x48/apps/krdc.png> 
+			[exec] (KTnef) {ktnef} </usr/share/icons/hicolor/48x48/apps/ktnef.png> 
+			[exec] (KTorrent) {ktorrent} </usr/share/icons/hicolor/48x48/apps/ktorrent.png> 
+			[exec] (Kerberos Authentication) {krb5-auth-dialog} </usr/share/icons/hicolor/48x48/status/krb-valid-ticket.png> 
+			[exec] (Konqueror) {kfmclient} </usr/share/icons/hicolor/48x48/apps/konqueror.png> 
+			[exec] (Konversation) {konversation} </usr/share/icons/hicolor/48x48/apps/konversation.png> 
+			[exec] (Krfb) {krfb} <> 
+			[exec] (Linphone) {linphone} </usr/share/pixmaps/linphone/linphone.png> 
+			[exec] (Pidgin Internet Messenger) {pidgin} </usr/share/icons/hicolor/48x48/apps/pidgin.png> 
+			[exec] (Qtransmission Bittorrent Client) {transmission-qt} <> 
+			[exec] (Rekonq) {rekonq} </usr/share/icons/hicolor/64x64/apps/rekonq.png> 
+			[exec] (Remmina Remote Desktop Client) {remmina} </usr/share/icons/hicolor/48x48/apps/remmina.png> 
+			[exec] (Remote Desktop Viewer) {vinagre} <> 
+			[exec] (Remote Viewer) {remote-viewer} <> 
+			[exec] (Skype) {skype} </usr/share/pixmaps/skype.png> 
+			[exec] (Steam) {/usr/bin/steam} </usr/share/pixmaps/steam.png> 
+			[exec] (Tkphone) {/usr/bin/run-tkiaxphone.sh} </usr/share/pixmaps/tkiaxphone.png> 
+			[exec] (Transmission) {transmission-gtk} </usr/share/pixmaps/transmission.png> 
+			[exec] (wxiax) {/usr/bin/wxiax} </usr/share/pixmaps/wxiax.png> 
+		[end]
+		[submenu] (Office) <> 
+			[exec] (Braindump) {braindump} </usr/share/icons/hicolor/48x48/apps/braindump.png> 
+			[exec] (Calligra Author) {calligraauthor} </usr/share/icons/hicolor/48x48/apps/calligraauthor.png> 
+			[exec] (Calligra Flow) {calligraflow} </usr/share/icons/hicolor/48x48/apps/calligraflow.png> 
+			[exec] (Calligra Sheets) {calligrasheets} </usr/share/icons/hicolor/48x48/apps/calligrasheets.png> 
+			[exec] (Calligra Stage) {calligrastage} </usr/share/icons/hicolor/48x48/apps/calligrastage.png> 
+			[exec] (Calligra Words) {calligrawords} </usr/share/icons/hicolor/48x48/apps/calligrawords.png> 
+			[exec] (Contact Theme Editor) {contactthemeeditor} </usr/share/icons/hicolor/48x48/apps/kaddressbook.png> 
+			[exec] (Dictionary) {gnome-dictionary} <> 
+			[exec] (Document Viewer) {evince} </usr/share/icons/hicolor/48x48/apps/evince.png> 
+			[exec] (Evolution) {evolution} </usr/share/icons/hicolor/48x48/apps/evolution.png> 
+			[exec] (KAddressBook) {kaddressbook} </usr/share/icons/hicolor/48x48/apps/kaddressbook.png> 
+			[exec] (KMail) {kmail} </usr/share/icons/hicolor/48x48/apps/kmail.png> 
+			[exec] (KMail Header Theme Editor) {headerthemeeditor} </usr/share/icons/hicolor/48x48/apps/kmail.png> 
+			[exec] (KMyMoney) {kmymoney} </usr/share/icons/hicolor/48x48/apps/kmymoney.png> 
+			[exec] (KOrganizer) {korganizer} </usr/share/icons/hicolor/48x48/apps/korganizer.png> 
+			[exec] (KTimeTracker) {ktimetracker} </usr/share/icons/hicolor/48x48/apps/ktimetracker.png> 
+			[exec] (KTnef) {ktnef} </usr/share/icons/hicolor/48x48/apps/ktnef.png> 
+			[exec] (Karbon) {karbon} </usr/share/icons/hicolor/48x48/apps/calligrakarbon.png> 
+			[exec] (Kexi) {kexi} </usr/share/icons/hicolor/48x48/apps/calligrakexi.png> 
+			[exec] (Kile) {kile} </usr/share/icons/hicolor/48x48/apps/kile.png> 
+			[exec] (Kontact) {kontact} </usr/share/icons/hicolor/48x48/apps/kontact.png> 
+			[exec] (LibreOffice Base) {libreoffice} </usr/share/icons/hicolor/48x48/apps/libreoffice-base.png> 
+			[exec] (LibreOffice Calc) {libreoffice} </usr/share/icons/hicolor/48x48/apps/libreoffice-calc.png> 
+			[exec] (LibreOffice Draw) {libreoffice} </usr/share/icons/hicolor/48x48/apps/libreoffice-draw.png> 
+			[exec] (LibreOffice Impress) {libreoffice} </usr/share/icons/hicolor/48x48/apps/libreoffice-impress.png> 
+			[exec] (LibreOffice Writer) {libreoffice} </usr/share/icons/hicolor/48x48/apps/libreoffice-writer.png> 
+			[exec] (LyX) {lyx} </usr/share/icons/hicolor/48x48/apps/lyx.png> 
+			[exec] (Plan) {calligraplan} </usr/share/icons/hicolor/48x48/apps/calligraplan.png> 
+			[exec] (Plan WorkPackage Handler) {calligraplanwork} </usr/share/icons/hicolor/48x48/apps/calligraplanwork.png> 
+			[exec] (Project Management) {planner} </usr/share/pixmaps/gnome-planner.png> 
+			[exec] (Texmaker) {texmaker} </usr/share/pixmaps/texmaker.png> 
+			[exec] (Tryton) {tryton} </usr/share/pixmaps/tryton-icon.png> 
+			[exec] (Xfbib) {xfbib} </usr/share/icons/hicolor/48x48/apps/xfbib.png> 
+			[exec] (freemind) {freemind} </usr/share/pixmaps/freemind.png> 
+		[end]
+		[submenu] (Other) <> 
+			[exec] (LibreOffice 4.0 Base-2) {libreoffice4.0} <> 
+			[exec] (LibreOffice 4.0 Calc-2) {libreoffice4.0} <> 
+			[exec] (LibreOffice 4.0 Draw-2) {libreoffice4.0} <> 
+			[exec] (LibreOffice 4.0 Impress-2) {libreoffice4.0} <> 
+			[exec] (LibreOffice 4.0 Writer-2) {libreoffice4.0} <> 
+			[exec] (LibreOffice 4.0-2) {libreoffice4.0} <> 
+		[end]
+		[submenu] (Programming) <> 
+			[exec] (Akonadi Console) {akonadiconsole} </usr/share/icons/hicolor/48x48/apps/akonadiconsole.png> 
+			[exec] (Chainsaw) {chainsaw} </usr/share/pixmaps/chainsaw.png> 
+			[exec] (Eric) {eric4} </usr/share/icons/hicolor/32x32/apps/eric4.png> 
+			[exec] (Git GUI) {git} </usr/share/git-gui/lib/git-gui.ico> 
+			[exec] (Groovy Console) {groovyConsole} </usr/share/pixmaps/groovy.png> 
+			[exec] (KDiff3) {kdiff3} </usr/share/icons/hicolor/32x32/apps/kdiff3.png> 
+			[exec] (LogFactor5) {logfactor5} </usr/share/pixmaps/logfactor5.png> 
+			[exec] (OpenJDK Monitoring & Management Console x86_64-2.4.5.1.fc20) {/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.60-2.4.5.1.fc20.x86_64/bin//jconsole} </usr/share/icons/hicolor/48x48/apps/java-1.7.0.png> 
+			[exec] (OpenJDK Policy Tool x86_64-2.4.5.1.fc20) {/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.60-2.4.5.1.fc20.x86_64/bin//policytool} </usr/share/icons/hicolor/48x48/apps/java-1.7.0.png> 
+			[exec] (Plasmate) {plasmate} </usr/share/icons/hicolor/48x48/apps/plasmagik.png> 
+			[exec] (Qt4 Designer) {designer-qt4} </usr/share/icons/hicolor/128x128/apps/designer.png> 
+			[exec] (Qt4 Linguist) {linguist-qt4} </usr/share/icons/hicolor/48x48/apps/linguist.png> 
+			[exec] (Qt4 QDbusViewer) {qdbusviewer} </usr/share/icons/hicolor/128x128/apps/qdbusviewer.png> 
+			[exec] (pgAdmin III) {/usr/bin/pgadmin3} </usr/share/pgadmin3/pgadmin3.xpm> 
+		[end]
+		[submenu] (Sound & Video) <> 
+			[submenu] (Capture and Import) </usr/share/icons/hicolor/48x48/apps/multimedia-capture-and-import.png> 
+				[exec] (Cheese) {cheese} </usr/share/icons/hicolor/48x48/apps/cheese.png> 
+				[exec] (Sound Juicer) {sound-juicer} </usr/share/icons/hicolor/48x48/apps/sound-juicer.png> 
+			[end]
+			[submenu] (Creation) </usr/share/icons/hicolor/48x48/apps/multimedia-creation.png> 
+				[submenu] (Editors) </usr/share/icons/hicolor/64x64/apps/multimedia-editors.png> 
+					[exec] (EasyTAG) {easytag} </usr/share/icons/hicolor/48x48/apps/easytag.png> 
+				[end]
+				[submenu] (Jack) </usr/share/icons/hicolor/32x32/apps/multimedia-jack.png> 
+					[exec] (LASH Panel) {lash_panel} </usr/share/icons/hicolor/48x48/apps/lash.png> 
+				[end]
+			[end]
+			[submenu] (Mixers) </usr/share/icons/hicolor/32x32/apps/multimedia-mixer.png> 
+				[exec] (PulseAudio Volume Control) {pavucontrol} </usr/share/icons/hicolor/48x48/apps/multimedia-volume-control.png> 
+			[end]
+			[submenu] (Output Generation) </usr/share/icons/hicolor/32x32/apps/multimedia-output-generation.png> 
+				[exec] (Brasero) {brasero} </usr/share/icons/hicolor/48x48/apps/brasero.png> 
+				[exec] (K3b) {k3b} </usr/share/icons/hicolor/48x48/apps/k3b.png> 
+				[exec] (Sound Converter) {soundconverter} </usr/share/icons/hicolor/48x48/apps/soundconverter.png> 
+			[end]
+			[submenu] (Tools) </usr/share/icons/hicolor/48x48/apps/multimedia-tools.png> 
+				[exec] (LASH Panel) {lash_panel} </usr/share/icons/hicolor/48x48/apps/lash.png> 
+			[end]
+			[exec] (AMZ Downloader) {amzdownloader} <> 
+			[exec] (Amarok) {amarok} </usr/share/icons/hicolor/48x48/apps/amarok.png> 
+			[exec] (Dragon Player) {dragon} </usr/share/icons/hicolor/48x48/apps/dragonplayer.png> 
+			[exec] (Google Music Manager) {/opt/google/musicmanager/google-musicmanager} </usr/share/icons/hicolor/48x48/apps/google-musicmanager.png> 
+			[exec] (Kaffeine) {kaffeine} </usr/share/icons/hicolor/48x48/apps/kaffeine.png> 
+			[exec] (PulseAudio Manager) {paman} <> 
+			[exec] (Rhythmbox) {rhythmbox} </usr/share/icons/hicolor/48x48/apps/rhythmbox.png> 
+			[exec] (Videos) {totem} </usr/share/icons/hicolor/48x48/apps/totem.png> 
+		[end]
+		[submenu] (System Tools) <> 
+			[exec] (Automatic Bug Reporting Tool) {gnome-abrt} </usr/share/icons/hicolor/48x48/status/gnome-abrt.png> 
+			[exec] (Disk Management) {usermount} </usr/share/pixmaps/disks.png> 
+			[exec] (Disk Usage Analyzer) {baobab} </usr/share/icons/hicolor/48x48/apps/baobab.png> 
+			[exec] (Dolphin) {dolphin} <> 
+			[exec] (Fedora LiveUSB Creator) {liveusb-creator} </usr/share/pixmaps/fedorausb.png> 
+			[exec] (K3b) {k3b} </usr/share/icons/hicolor/48x48/apps/k3b.png> 
+			[exec] (KSysGuard) {ksysguard} <> 
+			[exec] (KWalletManager) {kwalletmanager} </usr/share/icons/hicolor/48x48/apps/kwalletmanager.png> 
+			[exec] (Konsole) {konsole} <> 
+			[exec] (Krfb) {krfb} <> 
+			[exec] (LilyTerm) {lilyterm} </usr/share/pixmaps/lilyterm.png> 
+			[exec] (Nepomuk Backup) {nepomukbackup} <> 
+			[exec] (Nepomuk Cleaner) {nepomukcleaner} <> 
+			[exec] (Release Notes) {xdg-open} </usr/share/icons/hicolor/48x48/apps/fedora-release-notes.png> 
+			[exec] (SELinux Troubleshooter) {/usr/bin/sealert} </usr/share/icons/hicolor/48x48/apps/setroubleshoot_icon.png> 
+			[exec] (System Log) {gnome-system-log} </usr/share/icons/hicolor/48x48/apps/logview.png> 
+			[exec] (System Monitor) {gnome-system-monitor} <> 
+			[exec] (Terminal) {gnome-terminal} <> 
+			[exec] (UNetbootin) {unetbootin} </usr/share/pixmaps/unetbootin.png> 
+			[exec] (Virtual Machine Filesystem Browser) {guestfs-browser} </usr/share/guestfs-browser/pixmaps/guestfs-browser.svg> 
+			[exec] (Virtual Machine Manager) {virt-manager} </usr/share/icons/hicolor/48x48/apps/virt-manager.png> 
+			[exec] (XTerm) {xterm} </usr/share/icons/hicolor/48x48/apps/xterm-color.png> 
+		[end]
+		[submenu] (Wine) </usr/share/icons/hicolor/scalable/apps/wine.svg> 
+			[submenu] (Programs) <> 
+				[submenu] (NMC Security Wizard) <> 
+					[exec] (Launch APC Security Wizard) {env} <> 
+				[end]
+				[submenu] (Schneider Electric) <> 
+					[exec] (Device IP Configuration Utility) {env} </home/darrel/.local/share/icons/hicolor/64x64/apps/5141_icon.0.png> 
+					[exec] (Uninstall) {env} </home/darrel/.local/share/icons/hicolor/48x48/apps/00FC_modern-uninstall.0.png> 
+				[end]
+			[end]
+			[exec] (Notepad) {notepad} </usr/share/icons/hicolor/scalable/apps/notepad.svg> 
+			[exec] (Regedit) {regedit} </usr/share/icons/hicolor/scalable/apps/regedit.svg> 
+			[exec] (Wine Boot) {wineboot} </usr/share/icons/hicolor/scalable/apps/wine.svg> 
+			[exec] (Wine Configuration) {winecfg} </usr/share/icons/hicolor/scalable/apps/winecfg.svg> 
+			[exec] (Wine File) {winefile} </usr/share/icons/hicolor/scalable/apps/winefile.svg> 
+			[exec] (Wine Help) {wine} </usr/share/icons/hicolor/scalable/apps/winhelp.svg> 
+			[exec] (Wine OLE View) {wine} </usr/share/icons/hicolor/scalable/apps/wine.svg> 
+			[exec] (Wine Software Uninstaller) {wine} </usr/share/icons/hicolor/scalable/apps/msiexec.svg> 
+			[exec] (Wine Wordpad) {wine} </usr/share/icons/hicolor/scalable/apps/wordpad.svg> 
+		[end]

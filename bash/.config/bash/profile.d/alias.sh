@@ -1,0 +1,8 @@
+alias ps="ps aux"
+alias df="df -h"
+alias du="du -h"
+alias less="less -RMFX"
+alias more="less -RMFX"
+alias lynx="lynx -accept_all_cookies"
+alias vi="vim"
+alias sudo="sudo "

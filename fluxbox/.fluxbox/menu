@@ -1,0 +1,54 @@
+[begin] (Fluxbox)
+[encoding] {UTF-8}
+      [nop] (Quick Apps)
+      [exec] (Konsole) {konsole}
+      [exec] (Chrome) {google-chrome --password-store=kwallet} </usr/share/icons/hicolor/48x48/apps/google-chrome.png>
+      [exec] (Chrome Incognito) {google-chrome --incognito --password-store=kwallet} </usr/share/icons/hicolor/48x48/apps/google-chrome.png>
+      [exec] (KDE IM Contacts) {ktp-contactlist} </usr/share/icons/hicolor/48x48/apps/telepathy-kde.png> 
+      [exec] (Firefox) {firefox -no-xshm}  </usr/share/icons/hicolor/48x48/apps/firefox.png>
+      [exec] (Dolphin) {dolphin} <> 
+      [separator]
+      [include] (~/.fluxbox/menuapps)
+      [submenu] (Fluxbox menu)
+            [config] (Configure) 
+            [submenu] (System Styles) {Choose a style...}
+                  [stylesdir] (/usr/share/fluxbox/styles) 
+            [end]
+            [submenu] (User Styles) {Choose a style...}
+                  [stylesdir] (~/.fluxbox/styles) 
+            [end]
+            [workspaces] (Workspace List) 
+            [submenu] (Tools)
+                  [exec] (Window name) {xprop WM_CLASS|cut -d \" -f 2|xmessage -file - -center} 
+                  [exec] (Screenshot - JPG) {import screenshot.jpg && display -resize 50% screenshot.jpg} 
+                  [exec] (Screenshot - PNG) {import screenshot.png && display -resize 50% screenshot.png} 
+                  [exec] (Regen Menu) {fluxbox-generate_menu} 
+            [end]
+            [submenu] (Window Managers)
+                  [restart] (metacity) {metacity} 
+                  [restart] (kde) {startkde} 
+                  [restart] (openbox) {openbox} 
+                  [restart] (gnome) {gnome-session} 
+            [end]
+            [exec] (Lock screen) {xautolock -locknow} 
+            [commanddialog] (Fluxbox Command) 
+            [reconfig] (Reload config) 
+            [restart] (Restart) 
+            [exec] (About) {(fluxbox@EXEEXT@ -v; fluxbox@EXEEXT@ -info | sed 1d) | xmessage -file - -center} 
+            [separator] 
+            [exit] (Exit) 
+      [end]
+      [separator]
+      [nop] (Quick Actions)
+      [reconfig] (Reload Fluxbox Configuartion
+      [submenu] (Change Layout)
+            [exec] (Dual Work) {~/bin/chlayout dualwork}
+            [exec] (Dual Home) {~/bin/chlayout dualhome}
+            [exec] (Single) {~/bin/chlayout laptoponly}
+      [end]
+      [exec] (Lock screen) {xautolock -locknow} 
+      [exec] (Sleep) {xautolock -locknow ; systemctl suspend}
+      [exit] (Logout)
+      [exec] (Shutdown) {systemctl poweroff}
+[endencoding]
+[end]

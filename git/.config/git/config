@@ -1,0 +1,25 @@
+[user]
+	name = Darrel Clute
+	email = darrel@darrelclute.net
+[core]
+	editor = vim
+	pager = less
+[color]
+	ui = 1
+[push]
+	default = current
+[help]
+	autocorrect = 1
+[url "git@github.com:"]
+	insteadOf = "gh:"
+	insteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+	pushInsteadOf = "https://github.com/"
+[url "git@gist.github.com:"]
+	insteadOf = "gist:"
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
+	pushInsteadOf = "https://gist.github.com/"
+[include]
+	path = alias.d/default
+	path = config.d/default

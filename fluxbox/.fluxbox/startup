@@ -1,0 +1,28 @@
+#!/bin/sh
+#
+# fluxbox startup-script:
+#
+# Lines starting with a '#' are ignored.
+
+# Change your keymap:
+xmodmap "~/.Xmodmap"
+xset dpms 0 0 300
+xsetroot -solid black
+
+fluxbox &
+fbpid=$!
+
+sleep 10
+{
+ /usr/libexec/notification-daemon &
+ /usr/libexec/kde4/polkit-kde-authentication-agent-1 &
+ kwalletd &
+ kmix &
+ remmina &
+ nm-applet &
+ kwalletmanager &
+ kgpg &
+ xautolock -time 2 -locker "~/bin/lockauto" -nowlocker "~/bin/locknow" &
+} &
+
+wait $fbpid

@@ -1,0 +1,15 @@
+[app] (name=fbrun)
+  [Head]	{1}
+  [Position]	(CENTER)	{0 0}
+  [Layer]	{2}
+[end]
+[app] (name=konsole) (class=Konsole) (role=MainWindow#1)
+  [Head]	{2}
+  [Fullscreen]	{yes}
+[end]
+[app] (name=google-chrome) (class=Google-chrome)
+  [Workspace]	{0}
+[end]
+[app] (name=evolution) (class=Evolution) (role=EShellWindow-68231840)
+  [Workspace]	{3}
+[end]

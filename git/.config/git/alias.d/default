@@ -1,0 +1,10 @@
+[alias]
+	co = checkout
+	pu = !"git fetch origin -v ; git fetch upstream -v ; git merge upstream/master"
+	cm = commit
+	tags = tag -l
+	branches = branch -avv
+	remotes = remote -v
+	log-branch = log --color --graph --pretty=format:'%Cred%h%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	log-author = !"git log --format='%aN <%aE>' | sort -u"
+	clone-altmail = !"git clone $0 ~/repos/`basename $0 | awk -F'.' '{print $1}'` && cd $_ && git config user.email $1" 
