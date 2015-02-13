@@ -7,9 +7,9 @@ case "$LC_ALL$LC_CTYPE" in
 esac
 export LS_OPTIONS
 
-if [ -f /opt/local/bin/gdircolors ] ; then
+if [ command -v gdircolors ] ; then
     alias dircolors='gdircolors -b'
-elif [ -f /usr/bin/dircolors ] ; then
+elif [ command -v dircolors ] ; then
     alias dircolors='dircolors -b'
 fi
 
@@ -23,7 +23,7 @@ else
     eval $(dircolors)
 fi
 
-if [ -f /opt/local/bin/gls ] ; then
+if [ command -v gls ] ; then
     alias ls='gls $LS_OPTIONS -GAh --color=auto'
 else
     alias ls='ls $LS_OPTIONS -GAh --color=auto'
