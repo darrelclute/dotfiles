@@ -1,14 +1,10 @@
-if [ $(pgrep -q -P $(grep GPG_AGENT_INFO ${HOME}/.gnupg/gpg-agent-info | awk -F":" '{print $2}') >/dev/null 2>&1) ] ; then
-  . ${HOME}/.gnupg/gpg-agent-info
-elif [ $(pgrep -q -P $(grep GPG_AGENT_INFO ${HOME}/.gnupg/gpg-agent-info-$(hostname) | awk -F":" '{print $2}') >/dev/null 2>&1) ] ; then
-  . ${HOME}/.gnupg/gpg-agent-info-$(hostname)
-elif [ $(pgrep -q -P $(grep GPG_AGENT_INFO ${HOME}/.gpg-agent-info | awk -F":" '{print $2}') >/dev/null 2>&1) ] ; then
-  . ${HOME}/.gpg-agent-info
-else
-  eval $(gpg-agent --daemon --sh --write-env-file=${HOME}/.gnupg/gpg-agent-info)
+if [ -S ~/.gnupg/S.gpg-agent.ssh ] ; then
+    export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
+elif [ -S ~/.gnupg/S.gpg-agent ] ; then
+    :
+elif [ command -v gpg-agent ] ; then
+    gpg-agent
+    if [ -S ~/.gnupg/S.gpg-agent.ssh ] ; then
+        export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
+    fi
 fi
-
-
-
-export GPG_AGENT_INFO
-export SSH_AUTH_SOCK
