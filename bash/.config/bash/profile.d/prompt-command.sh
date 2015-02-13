@@ -3,7 +3,7 @@ case $TERM in
   xterm*)
     export PROMPT_COMMAND='history -a ; echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~} \007"'
     ;;
-  screen)
+  screen*)
     export PROMPT_COMMAND='history -a ; echo -ne "\033_${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~} \033\\"'
     ;;
   *)
