@@ -3,6 +3,7 @@ set rtp+=/opt/local/share/vim/vimfiles
 set rtp+=/opt/local/share/vim/vim74
 set rtp+=/opt/local/share/vim/vimfiles/after
 set rtp+=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/powerline/bindings/vim
+set rtp+=/usr/lib/python2.7/site-packages/powerline/bindings/vim
 set rtp+=~/.vim
 set rtp+=~/.vim/after
 set rtp+=~/.vim/bundle/Vundle.vim
