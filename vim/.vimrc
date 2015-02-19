@@ -40,6 +40,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'pythonhelper'
 Plugin 'python_match.vim'
 Plugin 'python_ifold'
+Plugin 'christoomey/vim-tmux-navigator'
 call vundle#end()
 
 filetype plugin indent on
