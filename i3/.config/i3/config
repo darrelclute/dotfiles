@@ -1,0 +1,167 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+# This config file uses keycodes (bindsym) and was written for the QWERTY
+# layout.
+#
+# To get a config file with the same key positions, but for your current
+# layout, use the i3-config-wizard
+#
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+font pango:Source Code Pro for Powerline Medium 8
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# use these keys for focus, movement, and resize directions when reaching for
+# the arrows is not convenient
+set $up k
+set $down j
+set $left h
+set $right l
+set $defmod Mod4
+
+# use Mouse+$defmod to drag floating windows to their wanted position
+floating_modifier $defmod
+
+# start a terminal
+bindsym $defmod+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $defmod+Shift+q kill
+
+# start dmenu (a program launcher)
+bindsym $defmod+d exec dmenu_run
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $defmod+d exec --no-startup-id i3-dmenu-desktop
+
+# change focus
+bindsym $defmod+$left focus left
+bindsym $defmod+$down focus down
+bindsym $defmod+$up focus up
+bindsym $defmod+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $defmod+Left focus left
+bindsym $defmod+Down focus down
+bindsym $defmod+Up focus up
+bindsym $defmod+Right focus right
+
+# move focused window
+bindsym $defmod+Shift+$left move left
+bindsym $defmod+Shift+$down move down
+bindsym $defmod+Shift+$up move up
+bindsym $defmod+Shift+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym $defmod+Shift+Left move left
+bindsym $defmod+Shift+Down move down
+bindsym $defmod+Shift+Up move up
+bindsym $defmod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $defmod+h split h
+
+# split in vertical orientation
+bindsym $defmod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $defmod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $defmod+s layout stacking
+bindsym $defmod+w layout tabbed
+bindsym $defmod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $defmod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $defmod+space focus mode_toggle
+
+# focus the parent container
+bindsym $defmod+a focus parent
+
+# focus the child container
+#bindsym $defmod+d focus child
+
+# move the currently focused window to the scratchpad
+bindsym $defmod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $defmod+minus scratchpad show
+
+# switch to workspace
+bindsym $defmod+1 workspace 1
+bindsym $defmod+2 workspace 2
+bindsym $defmod+3 workspace 3
+bindsym $defmod+4 workspace 4
+bindsym $defmod+5 workspace 5
+bindsym $defmod+6 workspace 6
+bindsym $defmod+7 workspace 7
+bindsym $defmod+8 workspace 8
+bindsym $defmod+9 workspace 9
+bindsym $defmod+0 workspace 10
+
+# move focused container to workspace
+bindsym $defmod+Shift+1 move container to workspace 1
+bindsym $defmod+Shift+2 move container to workspace 2
+bindsym $defmod+Shift+3 move container to workspace 3
+bindsym $defmod+Shift+4 move container to workspace 4
+bindsym $defmod+Shift+5 move container to workspace 5
+bindsym $defmod+Shift+6 move container to workspace 6
+bindsym $defmod+Shift+7 move container to workspace 7
+bindsym $defmod+Shift+8 move container to workspace 8
+bindsym $defmod+Shift+9 move container to workspace 9
+bindsym $defmod+Shift+0 move container to workspace 10
+
+# reload the configuration file
+bindsym $defmod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $defmod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $defmod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $defmod+r mode "resize"
+
+exec --no-startup-id xset dpms 900
+exec --no-startup-id xss-lock -- i3lock -c 000000 
+exec --no-startup-id xautolock -time 10 -locker "i3lock -c 000000"
+exec --no-startup-id python2 /usr/lib/python2.7/site-packages/powerline/bindings/bar/powerline-bar
+
+bindsym $defmod+l exec --no-startup-id xautolock -locknow
