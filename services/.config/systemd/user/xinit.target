@@ -1,0 +1,7 @@
+[Unit]
+Description=Start an X Session
+Requires=environment.target
+IgnoreOnIsolate=true
+
+[Install]
+Alias=default.target

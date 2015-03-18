@@ -1,0 +1,12 @@
+[Unit]
+Description=Synergy Server Daemon
+After=environment.target
+
+[Service]
+User=%i
+ExecStart=/usr/bin/synergys --no-daemon
+ExecStop=pkill synergys
+Restart=on-failure
+
+[Install]
+WantedBy=xinit.target

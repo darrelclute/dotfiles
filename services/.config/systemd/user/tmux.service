@@ -1,0 +1,15 @@
+[Unit]
+Description=Start a Tmux Server
+IgnoreOnIsolate=true
+Wants=cli.target
+Before=cli.target
+After=environment.target powerline.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/tmux new-session -d -A -s main
+ExecStop=/usr/bin/tmux kill-server
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Music Player Daemon
+IgnoreOnIsolate=true
+Wants=cli.target
+After=environment.target
+
+[Service]
+ExecStart=/usr/bin/mpd --no-daemon
+
+[Install]
+WantedBy=default.target

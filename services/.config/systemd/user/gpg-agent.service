@@ -1,0 +1,14 @@
+[Unit]
+Description=GnuPG private key agent
+IgnoreOnIsolate=true
+Wants=environment.target
+Before=environment.target
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/gpg-agent
+ExecStop=/usr/bin/pkill gpg-agent
+Restart=on-abort
+
+[Install]
+WantedBy=default.target
