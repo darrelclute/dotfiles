@@ -1,8 +1,8 @@
 Xft.dpi:      96
 URxvt.scrollBar: false
-URxvt.font: xft:Source\ Code\ Pro\ For\ Powerline\ Medium:pixelsize=8:antialias=true:hinting=true
+URxvt.font: xft:Source\ Code\ Pro\ For\ Powerline\ Medium:pixelsize=10:antialias=true:hinting=true
 URxvt.loginShell: true
-URxvt.letterSpace: -2
+URxvt.letterSpace: -5
 ! Background color
 URxvt.background: black
 ! Font color
