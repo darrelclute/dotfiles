@@ -21,19 +21,46 @@ font pango:Source Code Pro for Powerline Medium 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+# Leave full screen when a popup is presented, so that Pinentry is not missed.
+popup_during_fullscreen leave_fullscreen
+
+# Switching to same workspace twice will return you to previous workspace.
+workspace_auto_back_and_forth yes
+
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
 set $up k
 set $down j
 set $left h
 set $right l
+
+# Aliases for modifiers
 set $defmod Mod4
+set $super Mod4
+set $alt Mod1
+
+# Aliases for workspaces
+set $ws1 workspace 1: web
+set $ws2 workspace 2: terminal
+set $ws3 workspace 3
+set $ws4 workspace 4
+set $ws5 workspace 5
+set $ws6 workspace 6
+set $ws7 workspace 7
+set $ws8 workspace 8
+set $ws9 workspace 9
+set $ws10 workspace 10
+set $ws11 workspace 11
+set $ws12 workspace 12
 
 # use Mouse+$defmod to drag floating windows to their wanted position
 floating_modifier $defmod
 
 # start a terminal
-bindsym $defmod+Return exec i3-sensible-terminal
+bindsym $defmod+Return exec konsole --fullscreen
+
+# start chrome
+#bindsym $defmod+
 
 # kill focused window
 bindsym $defmod+Shift+q kill
@@ -70,10 +97,10 @@ bindsym $defmod+Shift+Up move up
 bindsym $defmod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $defmod+h split h
+bindsym $defmod+minus split h
 
 # split in vertical orientation
-bindsym $defmod+v split v
+bindsym $defmod+bar split v
 
 # enter fullscreen mode for the focused container
 bindsym $defmod+f fullscreen toggle
@@ -96,35 +123,39 @@ bindsym $defmod+a focus parent
 #bindsym $defmod+d focus child
 
 # move the currently focused window to the scratchpad
-bindsym $defmod+Shift+minus move scratchpad
+#bindsym $defmod+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $defmod+minus scratchpad show
+#bindsym $defmod+minus scratchpad show
 
 # switch to workspace
-bindsym $defmod+1 workspace 1
-bindsym $defmod+2 workspace 2
-bindsym $defmod+3 workspace 3
-bindsym $defmod+4 workspace 4
-bindsym $defmod+5 workspace 5
-bindsym $defmod+6 workspace 6
-bindsym $defmod+7 workspace 7
-bindsym $defmod+8 workspace 8
-bindsym $defmod+9 workspace 9
-bindsym $defmod+0 workspace 10
+bindsym Control+F1 $ws1
+bindsym Control+F2 $ws2
+bindsym Control+F3 $ws3
+bindsym Control+F4 $ws4
+bindsym Control+F5 $ws5
+bindsym Control+F6 $ws6
+bindsym Control+F7 $ws7
+bindsym Control+F8 $ws8
+bindsym Control+F9 $ws9
+bindsym Control+F10 $ws10
+bindsym Control+F11 $ws11
+bindsym Control+F12 $ws12
 
 # move focused container to workspace
-bindsym $defmod+Shift+1 move container to workspace 1
-bindsym $defmod+Shift+2 move container to workspace 2
-bindsym $defmod+Shift+3 move container to workspace 3
-bindsym $defmod+Shift+4 move container to workspace 4
-bindsym $defmod+Shift+5 move container to workspace 5
-bindsym $defmod+Shift+6 move container to workspace 6
-bindsym $defmod+Shift+7 move container to workspace 7
-bindsym $defmod+Shift+8 move container to workspace 8
-bindsym $defmod+Shift+9 move container to workspace 9
-bindsym $defmod+Shift+0 move container to workspace 10
+bindsym Control+Shift+F1 move container to $ws1
+bindsym Control+Shift+F2 move container to $ws2
+bindsym Control+Shift+F3 move container to $ws3
+bindsym Control+Shift+F4 move container to $ws4
+bindsym Control+Shift+F5 move container to $ws5
+bindsym Control+Shift+F6 move container to $ws6
+bindsym Control+Shift+F7 move container to $ws7
+bindsym Control+Shift+F8 move container to $ws8
+bindsym Control+Shift+F9 move container to $ws9
+bindsym Control+Shift+F10 move container to $ws10
+bindsym Control+Shift+F11 move container to $ws11
+bindsym Control+Shift+F12 move container to $ws12
 
 # reload the configuration file
 bindsym $defmod+Shift+c reload
@@ -132,6 +163,8 @@ bindsym $defmod+Shift+c reload
 bindsym $defmod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $defmod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# lock i3
+bindsym $alt+Control+l exec --no-startup-id xautolock -locknow
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -162,6 +195,6 @@ bindsym $defmod+r mode "resize"
 exec --no-startup-id xset dpms 900
 exec --no-startup-id xss-lock -- i3lock -c 000000 
 exec --no-startup-id xautolock -time 10 -locker "i3lock -c 000000"
-exec --no-startup-id python2 /usr/lib/python2.7/site-packages/powerline/bindings/bar/powerline-bar
-
-bindsym $defmod+l exec --no-startup-id xautolock -locknow
+exec --no-startup-id python2 /usr/lib/python2.7/site-packages/powerline/bindings/bar/powerline-bar.py | bar-aint-recursive -b
+exec --no-startup-id xrdb merge ~/.Xresources
+exec --no-startup-id xmodmap ~/.Xmodmap
