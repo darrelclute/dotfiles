@@ -195,6 +195,6 @@ bindsym $defmod+r mode "resize"
 exec --no-startup-id xset dpms 900
 exec --no-startup-id xss-lock -- i3lock -c 000000 
 exec --no-startup-id xautolock -time 10 -locker "i3lock -c 000000"
-exec --no-startup-id python2 /usr/lib/python2.7/site-packages/powerline/bindings/bar/powerline-bar.py | bar-aint-recursive -b
+exec --no-startup-id python2 /usr/lib/python2.7/site-packages/powerline/bindings/bar/powerline-bar.py --i3 | bar-aint-recursive -b
 exec --no-startup-id xrdb merge ~/.Xresources
 exec --no-startup-id xmodmap ~/.Xmodmap
