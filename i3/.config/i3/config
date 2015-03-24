@@ -13,7 +13,7 @@
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Source Code Pro for Powerline Medium 8
+font pango:Source Code Pro for Powerline Medium 7
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -207,6 +207,16 @@ bindsym $defmod+r mode "resize"
 exec --no-startup-id xset dpms 900
 exec --no-startup-id xss-lock -- i3lock -c 000000 
 exec --no-startup-id xautolock -time 10 -locker "i3lock -c 000000"
-exec --no-startup-id python2 /usr/lib/python2.7/site-packages/powerline/bindings/bar/powerline-bar.py --i3 | bar-aint-recursive -b
+#exec --no-startup-id python2 /usr/lib/python2.7/site-packages/powerline/bindings/bar/powerline-bar.py --i3 | bar-aint-recursive -b
 exec --no-startup-id xrdb merge ~/.Xresources
 exec --no-startup-id xmodmap ~/.Xmodmap
+
+bar {
+     #status_command python2 ~/bin/powerline-i3.py
+     status_command i3status
+     font pango:Source Code Pro for Powerline Medium 7
+     mode dock
+     position bottom
+     tray_output primary
+     strip_workspace_numbers yes
+}
