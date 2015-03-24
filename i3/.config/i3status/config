@@ -1,0 +1,20 @@
+general {
+        output_format = "i3bar"
+        colors = true
+        interval = 1
+}
+
+order += "mpd"
+order += "load"
+order += "time"
+
+time {
+    format = "%A %B %d %Y %T"
+}
+
+mpd {
+    format_up = "%artist - %title"
+    format_down = " "
+    host = "localhost"
+    port = 6600
+}
