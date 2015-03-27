@@ -24,9 +24,9 @@ else
 fi
 
 if [ $(command -v gls) ] ; then
-    alias ls='gls $LS_OPTIONS -GAh --color=auto'
+    alias ls='gls $LS_OPTIONS -Ah --color=auto'
 else
-    alias ls='ls $LS_OPTIONS -GAh --color=auto'
+    alias ls='ls $LS_OPTIONS -Ah --color=auto'
 fi
 
 alias l=ls
