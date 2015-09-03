@@ -50,14 +50,22 @@ set $ws7 workspace 7
 set $ws8 workspace 8
 set $ws9 workspace 9
 set $ws10 workspace 10
-set $ws11 workspace 11
-set $ws12 workspace 12
+set $ws11 workspace 11: LibreOffice
+set $ws12 workspace 12: Firefox
+
+assign [class="Google-chrome-beta"] 1: web
+assign [class="konsole"] 2: terminal
+assign [class="urxvt"] 2: terminal
+assign [class="URxvt"] 2: terminal
+assign [class="libreoffice-starcenter"] 11: LibreOffice
+assign [class="libreoffice"] 11: LibreOffice
+assign [class="Firefox"] 12: Firefox
 
 # use Mouse+$defmod to drag floating windows to their wanted position
 floating_modifier $defmod
 
 # start a terminal
-bindsym $defmod+Return exec konsole --fullscreen
+bindsym $defmod+Return exec urxvt -e tmux -2 attach -t main
 
 # start chrome
 #bindsym $defmod+
@@ -204,12 +212,9 @@ mode "resize" {
 
 bindsym $defmod+r mode "resize"
 
-exec --no-startup-id xset dpms 900
 exec --no-startup-id xss-lock -- i3lock -c 000000 
 exec --no-startup-id xautolock -time 10 -locker "i3lock -c 000000"
-exec --no-startup-id xrdb merge ~/.Xresources
-exec --no-startup-id xmodmap ~/.Xmodmap
-exec pasystray
+exec /usr/lib/polkit-kde/polkit-kde-authentication-agent-1 &
 
 bar {
      #status_command python2 ~/bin/powerline-i3.py
@@ -220,3 +225,7 @@ bar {
      tray_output primary
      strip_workspace_numbers yes
 }
+
+exec pasystray
+exec urxvt -e tmux -2 attach -t main
+exec synergy
