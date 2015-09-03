@@ -1,8 +1,16 @@
+!Xterm*termName: xterm-256color
+!URxvt*termName: rxvt-256color
+Xft.lcdfilter: lcddefault
 Xft.dpi:      96
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.rgba: rgb
 URxvt.scrollBar: false
-URxvt.font: xft:Source\ Code\ Pro\ For\ Powerline\ Medium:pixelsize=10:antialias=true:hinting=true
+URxvt*scrollBar_right: false
+URxvt.font: xft:Source Code Pro Medium-7,Source Code Pro for Powerline Medium-7:antialias=True;hinting=True
 URxvt.loginShell: true
-URxvt.letterSpace: -5
+!URxvt.letterSpace: -4
 ! Background color
 URxvt.background: black
 ! Font color
@@ -25,6 +33,9 @@ URxvt.color13: magenta
 URxvt.color14: cyan
 URxvt.color15: white
 URxvt.saveLines: 0
+URxvt*internalBorder: 0
 URxvt.tripleclickwords: true
-URxvt.perl-ext-common: fullscreen
-URxvt.keysym.F11: perl:fulscreen:switch
+URxvt.borderless: true
+URxvt*skipBuiltinGlyphs: true
+URxvt.perl-ext:
+URxvt.perl-ext-common:
