@@ -1,0 +1,11 @@
+[Unit]
+Description=minidlna server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/minidlnad -S -f /home/darrel/.config/minidlna/minidlna.conf -P /home/darrel/.cache/minidlna/minidlna.pid
+
+[Install]
+WantedBy=default.target
+
