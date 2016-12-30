@@ -13,7 +13,7 @@
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Source Code Pro for Powerline Medium 7
+font pango:Hack:style=Regular:antialias=true 9, pango:PowerlineSymbols:style=Medium:antialias=true 9, pango:Source Code Pro:style=Regular:antialias=true 9
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -26,6 +26,10 @@ popup_during_fullscreen leave_fullscreen
 
 # Switching to same workspace twice will return you to previous workspace.
 workspace_auto_back_and_forth yes
+
+# Set the new window to include border and title bar
+new_window normal 1
+hide_edge_borders both
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -40,32 +44,61 @@ set $super Mod4
 set $alt Mod1
 
 # Aliases for workspaces
-set $ws1 workspace 1: web
-set $ws2 workspace 2: terminal
-set $ws3 workspace 3
-set $ws4 workspace 4
-set $ws5 workspace 5
-set $ws6 workspace 6
-set $ws7 workspace 7
-set $ws8 workspace 8
-set $ws9 workspace 9
-set $ws10 workspace 10
-set $ws11 workspace 11: LibreOffice
-set $ws12 workspace 12: Firefox
+set $ws1 "1: Chrome"
+set $ws2 "2: terminal"
+set $ws3 "3: chat"
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
+set $ws11 "11: LibreOffice"
+set $ws12 "12: Firefox"
 
-assign [class="Google-chrome-beta"] 1: web
-assign [class="konsole"] 2: terminal
-assign [class="urxvt"] 2: terminal
-assign [class="URxvt"] 2: terminal
-assign [class="libreoffice-starcenter"] 11: LibreOffice
-assign [class="libreoffice"] 11: LibreOffice
-assign [class="Firefox"] 12: Firefox
+# Workspace screen assignment
+workspace $ws1 output eDP-1
+workspace $ws2 output HDMI-1
+workspace $ws3 output eDP-1
+workspace $ws4 output eDP-1
+workspace $ws5 output eDP-1
+workspace $ws6 output eDP-1
+workspace $ws7 output eDP-1
+workspace $ws8 output eDP-1
+workspace $ws9 output eDP-1
+workspace $ws10 output eDP-1
+workspace $ws11 output eDP-1
+workspace $ws12 output eDP-1
+
+# Application to workspace assignment
+assign [class="Slack"] $ws1
+assign [class="Google-chrome-beta" window_role="browser"] $ws1
+for_window [class="Google-chrome-beta"] border none
+assign [class="konsole"] $ws2
+for_window [class="konsole"] fullscreen enable
+for_window [class="konsole"] border none
+assign [class="urxvt"] $ws2
+for_window [class="urxvt"] fullscreen enable
+for_window [class="urxvt"] border none
+assign [class="URxvt"] $ws2
+for_window [class="URxvt"] fullscreen enable
+for_window [class="URxvt"] border none
+assign [class="st"] $ws2
+for_window [class="st"] fullscreen enable
+for_window [class="st"] border none
+assign [class="st-256color"] $ws2
+for_window [class="st-256color"] fullscreen enable
+for_window [class="st-256color"] border none
+assign [class="libreoffice-starcenter"] $ws11
+assign [class="libreoffice"] $ws11
+assign [class="Firefox"] $ws12
 
 # use Mouse+$defmod to drag floating windows to their wanted position
 floating_modifier $defmod
 
 # start a terminal
-bindsym $defmod+Return exec urxvt -e tmux -2 attach -t main
+bindsym $defmod+Return exec st -e tmux -2 attach -t main
 
 # start chrome
 #bindsym $defmod+
@@ -73,14 +106,18 @@ bindsym $defmod+Return exec urxvt -e tmux -2 attach -t main
 # kill focused window
 bindsym $defmod+Shift+q kill
 
+# Trigger xkill to kill a clicked on application
+bindsym $defmod+Shift+x exec xkill
+
 # start dmenu (a program launcher)
 bindsym $defmod+d exec dmenu_run
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $defmod+d exec --no-startup-id i3-dmenu-desktop
 
-# change focus
+# change focus, vim motion keys
 bindsym $defmod+$left focus left
 bindsym $defmod+$down focus down
 bindsym $defmod+$up focus up
@@ -92,7 +129,7 @@ bindsym $defmod+Down focus down
 bindsym $defmod+Up focus up
 bindsym $defmod+Right focus right
 
-# move focused window
+# move focused window, vim motion keys
 bindsym $defmod+Shift+$left move left
 bindsym $defmod+Shift+$down move down
 bindsym $defmod+Shift+$up move up
@@ -138,32 +175,32 @@ bindsym $defmod+a focus parent
 #bindsym $defmod+minus scratchpad show
 
 # switch to workspace
-bindsym Control+F1 $ws1
-bindsym Control+F2 $ws2
-bindsym Control+F3 $ws3
-bindsym Control+F4 $ws4
-bindsym Control+F5 $ws5
-bindsym Control+F6 $ws6
-bindsym Control+F7 $ws7
-bindsym Control+F8 $ws8
-bindsym Control+F9 $ws9
-bindsym Control+F10 $ws10
-bindsym Control+F11 $ws11
-bindsym Control+F12 $ws12
+bindsym Control+F1 workspace $ws1
+bindsym Control+F2 workspace $ws2
+bindsym Control+F3 workspace $ws3
+bindsym Control+F4 workspace $ws4
+bindsym Control+F5 workspace $ws5
+bindsym Control+F6 workspace $ws6
+bindsym Control+F7 workspace $ws7
+bindsym Control+F8 workspace $ws8
+bindsym Control+F9 workspace $ws9
+bindsym Control+F10 workspace $ws10
+bindsym Control+F11 workspace $ws11
+bindsym Control+F12 workspace $ws12
 
 # move focused container to workspace
-bindsym Control+Shift+F1 move container to $ws1
-bindsym Control+Shift+F2 move container to $ws2
-bindsym Control+Shift+F3 move container to $ws3
-bindsym Control+Shift+F4 move container to $ws4
-bindsym Control+Shift+F5 move container to $ws5
-bindsym Control+Shift+F6 move container to $ws6
-bindsym Control+Shift+F7 move container to $ws7
-bindsym Control+Shift+F8 move container to $ws8
-bindsym Control+Shift+F9 move container to $ws9
-bindsym Control+Shift+F10 move container to $ws10
-bindsym Control+Shift+F11 move container to $ws11
-bindsym Control+Shift+F12 move container to $ws12
+bindsym Control+Shift+F1 move container to workspace $ws1
+bindsym Control+Shift+F2 move container to workspace $ws2
+bindsym Control+Shift+F3 move container to workspace $ws3
+bindsym Control+Shift+F4 move container to workspace $ws4
+bindsym Control+Shift+F5 move container to workspace $ws5
+bindsym Control+Shift+F6 move container to workspace $ws6
+bindsym Control+Shift+F7 move container to workspace $ws7
+bindsym Control+Shift+F8 move container to workspace $ws8
+bindsym Control+Shift+F9 move container to workspace $ws9
+bindsym Control+Shift+F10 move container to workspace $ws10
+bindsym Control+Shift+F11 move container to workspace $ws11
+bindsym Control+Shift+F12 move container to workspace $ws12
 
 # reload the configuration file
 bindsym $defmod+Shift+c reload
@@ -172,7 +209,7 @@ bindsym $defmod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $defmod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # lock i3
-bindsym $alt+Control+l exec --no-startup-id xautolock -locknow
+bindsym $alt+Control+l exec --no-startup-id loginctl lock-session
 
 # mpd controls
 # play/pause output
@@ -212,20 +249,23 @@ mode "resize" {
 
 bindsym $defmod+r mode "resize"
 
-exec --no-startup-id xss-lock -- i3lock -c 000000 
-exec --no-startup-id xautolock -time 10 -locker "i3lock -c 000000"
-exec /usr/lib/polkit-kde/polkit-kde-authentication-agent-1 &
+exec --no-startup-id xss-lock -- i3lock -n -d -u -e -c 000000 
+exec polkit-kde-authentication-agent-1 &
 
 bar {
-     #status_command python2 ~/bin/powerline-i3.py
      status_command i3status
-     font pango:Source Code Pro for Powerline Medium 7
+     font pango:Hack:style=Regular:antialias=true 9, pango:PowerlineSymbols:style=Medium:antialias=true 9, pango:Source Code Pro:style=Regular:antialias=true 9
      mode dock
      position bottom
      tray_output primary
-     strip_workspace_numbers yes
+     strip_workspace_numbers no
 }
 
 exec pasystray
-exec urxvt -e tmux -2 attach -t main
-exec synergy
+exec nm-applet
+exec firewall-applet
+exec yubioath-gui --tray
+exec dnssec-trigger-panel
+exec st -e tmux -2 attach -t main
+exec slack
+exec google-chrome-beta
