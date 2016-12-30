@@ -1,6 +1,7 @@
 [user]
 	name = Darrel Clute
 	email = darrel@darrelclute.net
+	signingkey = 0x54816ED6261FCA30
 [core]
 	editor = vim
 	pager = less
@@ -8,6 +9,7 @@
 	ui = 1
 [push]
 	default = current
+	gpgSign = if-asked
 [help]
 	autocorrect = 1
 [url "https://github.com/"]
@@ -24,3 +26,8 @@
 [include]
 	path = alias.d/default
 	path = config.d/default
+[commit]
+	gpgSign = 1
+	verbose = 1
+[gpg]
+	program = /usr/bin/gpg2
