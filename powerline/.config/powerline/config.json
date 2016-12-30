@@ -19,7 +19,7 @@
 		},
 		"shell": {
 			"colorscheme": "default",
-			"theme": "default",
+			"theme": "drc",
 			"local_themes": {
 				"continuation": "continuation",
 				"select": "select"
@@ -27,7 +27,8 @@
 		},
 		"tmux": {
 			"colorscheme": "default",
-			"theme": "drc"
+			"theme": "drc",
+                        "top_theme": "drc"
 		},
 		"vim": {
 			"colorscheme": "default",
@@ -47,7 +48,8 @@
 		},
 		"wm": {
 			"colorscheme": "default",
-			"theme": "drc"
+			"theme": "drc",
+                        "top_theme": "drc"
 		}
 	}
 }
