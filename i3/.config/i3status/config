@@ -1,20 +1,52 @@
 general {
-        output_format = "i3bar"
-        colors = true
-        interval = 1
+    output_format = "i3bar"
+    colors = true
+    interval = 1
+    separator = ""
 }
 
-order += "mpd"
 order += "load"
-order += "time"
+order += "battery 0"
+order += "tztime UTC"
+order += "tztime useastern"
+order += "tztime uscentral"
+order += "tztime usmountain"
+order += "tztime uspacific"
 
-time {
-    format = "%A %B %d %Y %T"
+tztime UTC {
+    format = "%a %F %T %Z"
+    timezone = "Etc/UTC"
 }
 
-mpd {
-    format_up = "%artist - %title"
-    format_down = " "
-    host = "localhost"
-    port = 6600
+tztime useastern {
+    format = "%a %F %T %Z"
+    timezone = "EST5EDT"
 }
+
+tztime uscentral {
+    format = "%a %F %T %Z"
+    timezone = "CST6CDT"
+}
+
+tztime usmountain {
+    format = "%a %F %T %Z"
+    timezone = "MST7MDT"
+}
+
+tztime uspacific {
+    format = "%a %F %T %Z"
+    timezone = "PST8PDT"
+}
+
+battery 0 {
+    format = "%status %percentage"
+    status_chr = "⚡"
+    status_full = "☻"
+    path = "/sys/class/power_supply/BAT0/uevent"
+    integer_battery_capacity = true
+}
+
+load {
+    max_threshold = "10"
+}
+    
