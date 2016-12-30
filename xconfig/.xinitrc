@@ -1,5 +1,4 @@
-xrandr --output VGA1 --primary
+~/.screenlayout/active.sh
 xrdb merge ~/.Xresources
 xset dpms 900
-xmodmap ~/.Xmodmap
 exec i3
