@@ -10,10 +10,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 filetype off
 set nocompatible
+set wildmenu
+set esckeys
+set gdefault
 set ruler
 set nobackup
 set showcmd
 set incsearch
+set hlsearch
 set backspace=indent,eol,start
 set background=dark
 set laststatus=2
@@ -23,9 +27,17 @@ set expandtab
 set smarttab
 set ignorecase
 set smartcase
-set modeline
-set modelines=5
 set clipboard+=unnamed
+set encoding=utf-8 nobomb
+set binary
+set noeol
+set backupdir=~/.cache/vim/backup
+set directory=~/.cache/vim/swap
+set undodir=~/.cache/vim/undo
+set noerrorbells
+set nostartofline
+set title
+set pastetoggle=<F2>
 
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
@@ -37,14 +49,17 @@ Plugin 'Rykka/clickable.vim'
 Plugin 'Rykka/riv.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'pythonhelper'
 Plugin 'python_match.vim'
 Plugin 'python_ifold'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'fatih/vim-go'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'jinja'
 call vundle#end()
 
 filetype plugin indent on
+set modeline
+set modelines=5
 
 if &t_Co > 2 || has("gui_running")
   syntax on
@@ -60,12 +75,16 @@ autocmd FileType text setlocal tw=78
 autocmd FileType python setlocal expandtab tabstop=4 ai tw=79
 autocmd FileType yaml setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2 ai tw=79
 autocmd FileType sh setlocal expandtab tabstop=4 softtabstop=4 ai tw=79
+autocmd FileType json setlocal syntax=javascript
+autocmd FileType gitcommit setlocal tw=79
 autocmd! BufWritePost vimrc nested :source ~/.vimrc
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 colorscheme fruity
 
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 
 if ! has('gui_running')
     set ttimeoutlen=10
@@ -75,3 +94,10 @@ if ! has('gui_running')
         au InsertLeave * set timeoutlen=1000
     augroup END
 endif
+
+noremap <leader>W :w !sudo tee % > /dev/null<CR>
+
+let g:GPGExecutable="gpg2"
+let g:GPGPreferSymmetric=1
+let g:GPGPreferSymmetric=1
+let g:GPGPreferSign=1
