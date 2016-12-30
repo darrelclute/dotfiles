@@ -8,7 +8,7 @@ Xft.hintstyle: hintfull
 Xft.rgba: rgb
 URxvt.scrollBar: false
 URxvt*scrollBar_right: false
-URxvt.font: xft:Source Code Pro Medium-7,Source Code Pro for Powerline Medium-7:antialias=True;hinting=True
+URxvt.font: xft:Hack:style=Regular:size=7:antialias=true,xft:PowerlineSymbols:style=Medium:size=7:antialias=true,xft:Source Code Pro:style=Regular:size=7:antialias=true,xft:Droid Sans:style=Regular:size=7:antialias=true
 URxvt.loginShell: true
 !URxvt.letterSpace: -4
 ! Background color
