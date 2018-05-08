@@ -56,3 +56,11 @@ if [ -d $HOME/.config/bash/profile.d ] ; then
         fi
     done
 fi
+
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] ; then
+    if [[ -f $HOME/.config/sway/config ]] && [[ -x /usr/bin/sway ]] ; then
+        exec sway
+    elif [[ -f $HOME/.config/i3/config ]] && [[ -x /usr/bin/startx ]] ; then
+        exec startx
+    fi
+fi
