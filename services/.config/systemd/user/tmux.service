@@ -6,10 +6,9 @@ Before=cli.target
 After=environment.target powerline.service
 
 [Service]
-Type=oneshot
-RemainAfterExit=yes
+Type=forking
 ExecStart=/usr/bin/tmux new-session -d -A -s main
-ExecStop=/usr/bin/tmux kill-server
+ExecStop=/usr/bin/tmux kill-session -t main
 
 [Install]
 WantedBy=default.target
