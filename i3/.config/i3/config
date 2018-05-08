@@ -227,9 +227,9 @@ bindsym XF86AudioNext exec --no-startup-id mpc next
 bindsym XF86AudioStop exec --no-startup-id mpc stop
 
 # Control volume (mute/unmute)
-bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 3%-
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 3%+
+bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master 3%-
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master 3%+
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
