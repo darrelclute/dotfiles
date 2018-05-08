@@ -3,7 +3,6 @@ Description=Synergy Server Daemon
 After=environment.target
 
 [Service]
-User=%i
 ExecStart=/usr/bin/synergys --no-daemon
 ExecStop=/usr/bin/pkill synergys
 Restart=on-failure
