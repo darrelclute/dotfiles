@@ -44,18 +44,18 @@ set $super Mod4
 set $alt Mod1
 
 # Aliases for workspaces
-set $ws1 "1: Chrome"
-set $ws2 "2: terminal"
-set $ws3 "3: chat"
-set $ws4 4
-set $ws5 5
-set $ws6 6
+set $ws1 "1: home"
+set $ws2 "2: keybase"
+set $ws3 "3: virt"
+set $ws4 "4: firefox"
+set $ws5 "5: office"
+set $ws6 "6: conference"
 set $ws7 7
 set $ws8 8
 set $ws9 9
 set $ws10 10
-set $ws11 "11: LibreOffice"
-set $ws12 "12: Firefox"
+set $ws11 11
+set $ws12 12
 
 # Workspace screen assignment
 workspace $ws1 output eDP-1
@@ -73,26 +73,31 @@ workspace $ws12 output eDP-1
 
 # Application to workspace assignment
 assign [class="Slack"] $ws1
+for_window [class="Slack"] border none
+for_window [class="Slack"] floating disabled
 assign [class="Google-chrome-beta" window_role="browser"] $ws1
 for_window [class="Google-chrome-beta"] border none
-assign [class="konsole"] $ws2
-for_window [class="konsole"] fullscreen enable
+assign [class="konsole"] $ws1
 for_window [class="konsole"] border none
-assign [class="urxvt"] $ws2
-for_window [class="urxvt"] fullscreen enable
+assign [class="urxvt"] $ws1
 for_window [class="urxvt"] border none
-assign [class="URxvt"] $ws2
-for_window [class="URxvt"] fullscreen enable
+assign [class="URxvt"] $ws1
 for_window [class="URxvt"] border none
-assign [class="st"] $ws2
-for_window [class="st"] fullscreen enable
+assign [class="st"] $ws1
 for_window [class="st"] border none
-assign [class="st-256color"] $ws2
-for_window [class="st-256color"] fullscreen enable
+assign [class="st-256color"] $ws1
 for_window [class="st-256color"] border none
-assign [class="libreoffice-starcenter"] $ws11
-assign [class="libreoffice"] $ws11
-assign [class="Firefox"] $ws12
+assign [class="libreoffice-starcenter"] $ws5
+assign [class="libreoffice"] $ws5
+assign [class="Firefox"] $ws4
+assign [class="Bluejeans"] $ws6
+assign [class="zoom"] $ws6
+assign [class="Virt-manager"] $ws3
+assign [class="virt-manager"] $ws3
+assign [class="Remote-viewer"] $ws3
+assign [class="remote-viewer"] $ws3
+assign [class="Keybase"] $ws2
+assign [class="keybase"] $ws2
 
 # use Mouse+$defmod to drag floating windows to their wanted position
 floating_modifier $defmod
