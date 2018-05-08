@@ -114,9 +114,11 @@ bindsym $defmod+Shift+s exec st -e tmux new-session -A -s slack tmux source-file
 # kill focused window
 bindsym $defmod+Shift+q kill
 
+# start passmenu
+bindsym $defmod+p exec passmenu -p password: -i
 
 # start dmenu (a program launcher)
-bindsym $defmod+d exec dmenu_run
+bindsym $defmod+d exec dmenu_run -p run: -i
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
