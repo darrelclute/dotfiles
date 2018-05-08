@@ -34,6 +34,7 @@ if [ -n "$(which tmux 2>/dev/null)" ]; then
                         eval export $v
                     fi
                 done < <(tmux show-environment)
+                gpg-connect-agent updatestartuptty /bye
                 ;;
             *)
                 $tmux "$@"
