@@ -259,6 +259,8 @@ bindsym $defmod+r mode "resize"
 
 exec --no-startup-id xss-lock -- i3lock -n -d -u -e -c 000000 
 exec polkit-kde-authentication-agent-1 &
+exec --no-startup-id "i3-msg 'workspace 1: home; append_layout ~/.config/i3/home.json'"
+exec v4l2-ctl -c focus_auto=0,exposure_auto=1,zoom_absolute=220,exposure_absolute=208
 
 bar {
      status_command i3status
@@ -272,8 +274,7 @@ bar {
 exec pasystray
 exec nm-applet
 exec firewall-applet
-exec yubioath-gui --tray
-exec dnssec-trigger-panel
 exec st -e tmux -2 attach -t main
-exec slack
+exec KEYBASE_START_UI=hideWindow /opt/keybase/Keybase &>> ~/.cache/keybase/Keybase.app.log
 exec google-chrome-beta
+exec slack
