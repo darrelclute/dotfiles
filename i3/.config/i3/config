@@ -103,7 +103,10 @@ assign [class="keybase"] $ws2
 floating_modifier $defmod
 
 # start a terminal
-bindsym $defmod+Return exec st -e tmux -2 attach -t main
+bindsym $defmod+Return exec st -e tmux -2 attach-session -t main
+
+# start a terminal
+bindsym $defmod+Shift+s exec st -e tmux new-session -A -s slack tmux source-file $HOME/.config/tmux/slack.conf
 
 # start chrome
 #bindsym $defmod+
