@@ -45,7 +45,6 @@ Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'saltstack/salt-vim'
 Plugin 'jamessan/vim-gnupg'
 Plugin 'nvie/vim-flake8'
-Plugin 'Rykka/clickable.vim'
 Plugin 'Rykka/riv.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'tpope/vim-fugitive'
@@ -55,6 +54,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jinja'
+Plugin 'elzr/vim-json'
 call vundle#end()
 
 filetype plugin indent on
