@@ -114,8 +114,6 @@ bindsym $defmod+Shift+s exec st -e tmux new-session -A -s slack tmux source-file
 # kill focused window
 bindsym $defmod+Shift+q kill
 
-# Trigger xkill to kill a clicked on application
-bindsym $defmod+Shift+x exec xkill
 
 # start dmenu (a program launcher)
 bindsym $defmod+d exec dmenu_run
