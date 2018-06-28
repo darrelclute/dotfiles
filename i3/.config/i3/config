@@ -115,7 +115,7 @@ bindsym $defmod+Shift+s exec st -e tmux new-session -A -s slack tmux source-file
 bindsym $defmod+Shift+q kill
 
 # start passmenu
-bindsym $defmod+p exec passmenu -p password: -i
+bindsym $defmod+p exec passmenu --type -p password: -i
 
 # start dmenu (a program launcher)
 bindsym $defmod+d exec dmenu_run -p run: -i
