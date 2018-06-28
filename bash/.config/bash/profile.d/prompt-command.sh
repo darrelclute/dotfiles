@@ -121,7 +121,6 @@ readonly BG_SKYBLUE1="\[$(tput setab 117)\]"
 readonly BG_KHAKI1="\[$(tput setab 228)\]"
 
 __user_info() {
-    #printf "${BG_DARKBLUE}${FG_WHITE}${BOLD} \\\\u ${RESET}" #${BG_GRAY10}${FG_DARKBLUE}${DIV_LEFT_HARD}${RESET}"
     if [[ $UID -eq 0 ]] ; then
         printf "${USER}"
         return 1
@@ -132,12 +131,12 @@ __user_info() {
 }
 
 __host_info() {
-    printf "${HOSTNAME%%.*}" #${BG_GRAY4}${FG_GRAY10}${DIV_LEFT_HARD}${RESET}"
+    printf "${HOSTNAME%%.*}"
     return 0
 }
 
 __dir_info() {
-    printf "${PWD/#$HOME/\~}" #${BG_GRAY2}${FG_GRAY4}${DIV_LEFT_HARD}${RESET}"
+    printf "${PWD/#$HOME/\~}"
     return 0
 }
 
@@ -182,9 +181,9 @@ __aws_info() {
 
 prompt_status() {
     if [ $? -eq 0 ] ; then
-        local LSTATUS="${BG_DARKGREEN}      ${RESET}${FG_DARKGREEN}${DIV_LEFT_HARD}"
+        local LSTATUS="${BG_DARKGREEN}      ${RESET}${FG_DARKGREEN}${DIV_LEFT_HARD}${RESET}"
     else
-        local LSTATUS="${BG_DARKRED}      ${RESET}${FG_DARKRED}${DIV_LEFT_HARD}"
+        local LSTATUS="${BG_DARKRED}      ${RESET}${FG_DARKRED}${DIV_LEFT_HARD}${RESET}"
     fi
 
     local NORMAL EXCEPTION status PROMPT
@@ -236,7 +235,7 @@ prompt_status() {
     done
 
     # PS1
-    PS1="${PROMPT}\n${LSTATUS}${RESET}"
+    PS1="${PROMPT}${RESET}\n${LSTATUS}${RESET}"
     PS2="${LSTATUS}${RESET}"
 }
 
