@@ -7,11 +7,11 @@ if [ -d /opt/local/bin ] ; then
 fi
 
 if [ -d $HOME/.local/bin ] ; then
-    PATH="$PATH:$HOME/.local/bin"
+    PATH="$HOME/.local/bin:$PATH"
 fi
 
 if [ -d $HOME/bin ] ; then
-    PATH="$PATH:$HOME/bin"
+    PATH="$HOME/bin:$PATH"
 fi
 
 export PATH
