@@ -45,7 +45,7 @@ set $alt Mod1
 
 # Aliases for workspaces
 set $ws1 "1: home"
-set $ws2 "2: keybase"
+set $ws2 "2: comms"
 set $ws3 "3: virt"
 set $ws4 "4: firefox"
 set $ws5 "5: office"
@@ -58,18 +58,18 @@ set $ws11 11
 set $ws12 12
 
 # Workspace screen assignment
-workspace $ws1 output eDP-1
-workspace $ws2 output HDMI-1
-workspace $ws3 output eDP-1
-workspace $ws4 output eDP-1
-workspace $ws5 output eDP-1
-workspace $ws6 output eDP-1
-workspace $ws7 output eDP-1
-workspace $ws8 output eDP-1
-workspace $ws9 output eDP-1
-workspace $ws10 output eDP-1
-workspace $ws11 output eDP-1
-workspace $ws12 output eDP-1
+workspace $ws1 output HDMI-1
+workspace $ws2 output DP-2
+workspace $ws3 output HDMI-1
+workspace $ws4 output DP-2
+workspace $ws5 output DP-2
+workspace $ws6 output DP-2
+workspace $ws7 output DP-2
+workspace $ws8 output DP-2
+workspace $ws9 output DP-2
+workspace $ws10 output DP-2
+workspace $ws11 output DP-2
+workspace $ws12 output DP-2
 
 # Application to workspace assignment
 assign [class="Slack"] $ws1
@@ -276,5 +276,6 @@ exec nm-applet
 exec firewall-applet
 exec st -e tmux -2 attach -t main
 exec KEYBASE_START_UI=hideWindow /opt/keybase/Keybase &>> ~/.cache/keybase/Keybase.app.log
-exec google-chrome-beta
-exec slack
+exec libinput-gestures -c ~/.config/libinput-gestures/i3.conf
+#exec google-chrome-beta
+#exec slack
