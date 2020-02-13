@@ -172,7 +172,8 @@ __git_info() {
 
 __aws_info() {
     if [[ -v "AWS_DEFAULT_PROFILE" ]] ; then
-        printf " AWS ID: ${AWS_DEFAULT_PROFILE}"
+        printf " AWS Profile: ${AWS_DEFAULT_PROFILE}"
+        printf " AWS Region: ${AWS_DEFAULT_REGION}"
         return 0
     else
         return 255
