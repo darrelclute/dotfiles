@@ -13,7 +13,7 @@
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Hack:style=Regular:antialias=true 9, pango:PowerlineSymbols:style=Medium:antialias=true 9, pango:Source Code Pro:style=Regular:antialias=true 9
+font pango:Hack:style=Regular:antialias=true 7, panto:Siji:style=Regualr:antialias=true 7, pango:PowerlineSymbols:style=Medium:antialias=true 7, pango:Source Code Pro:style=Regular:antialias=true 7
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -44,13 +44,13 @@ set $super Mod4
 set $alt Mod1
 
 # Aliases for workspaces
-set $ws1 "1: home"
-set $ws2 "2: comms"
+set $ws1 "1: term"
+set $ws2 "2: chrome"
 set $ws3 "3: virt"
 set $ws4 "4: firefox"
 set $ws5 "5: office"
 set $ws6 "6: conference"
-set $ws7 7
+set $ws7 "7: keybase"
 set $ws8 8
 set $ws9 9
 set $ws10 10
@@ -75,7 +75,7 @@ workspace $ws12 output DP-2
 assign [class="Slack"] $ws1
 for_window [class="Slack"] border none
 for_window [class="Slack"] floating disabled
-assign [class="Google-chrome-beta" window_role="browser"] $ws1
+assign [class="Google-chrome-beta" window_role="browser"] $ws2
 for_window [class="Google-chrome-beta"] border none
 assign [class="konsole"] $ws1
 for_window [class="konsole"] border none
@@ -89,6 +89,11 @@ assign [class="st-256color"] $ws1
 for_window [class="st-256color"] border none
 assign [class="libreoffice-starcenter"] $ws5
 assign [class="libreoffice"] $ws5
+assign [class="xournal"] $ws5
+assign [class="Xournal"] $ws5
+for_window [class="xournal"] border none
+for_window [class="Xournal"] border none
+for_window [class="Firefox"] border none
 assign [class="Firefox"] $ws4
 assign [class="Bluejeans"] $ws6
 assign [class="zoom"] $ws6
@@ -96,8 +101,10 @@ assign [class="Virt-manager"] $ws3
 assign [class="virt-manager"] $ws3
 assign [class="Remote-viewer"] $ws3
 assign [class="remote-viewer"] $ws3
-assign [class="Keybase"] $ws2
-assign [class="keybase"] $ws2
+assign [class="Keybase"] $ws7
+assign [class="keybase"] $ws7
+for_window [class="Keybase"] border none
+for_window [class="keybase"] border none
 
 # use Mouse+$defmod to drag floating windows to their wanted position
 floating_modifier $defmod
@@ -257,24 +264,20 @@ mode "resize" {
 
 bindsym $defmod+r mode "resize"
 
-exec --no-startup-id xss-lock -- i3lock -n -d -u -e -c 000000 
-exec polkit-kde-authentication-agent-1 &
-exec --no-startup-id "i3-msg 'workspace 1: home; append_layout ~/.config/i3/home.json'"
-exec v4l2-ctl -c focus_auto=0,exposure_auto=1,zoom_absolute=220,exposure_absolute=208
-
-bar {
-     status_command i3status
-     font pango:Hack:style=Regular:antialias=true 9, pango:PowerlineSymbols:style=Medium:antialias=true 9, pango:Source Code Pro:style=Regular:antialias=true 9
-     mode dock
-     position bottom
-     tray_output primary
-     strip_workspace_numbers no
-}
-
-exec pasystray
+exec --no-startup-id setxkbmap -option
+exec --no-startup-id setxkbmap -option "caps:ctrl_modifier"
+exec xcape -e "Caps_Lock=Escape"
+exec --no-startup-id xsetroot -solid "#000000"
+exec gnome-screensaver
+exec --no-startup-id xss-lock -- gnome-screensaver-command -l
+exec_always --no-startup-id polybar-launch
+exec --no-startup-id gsd-xsettings
+exec --no-startup-id polkit-gnome-authentication-agent-1
+exec udiskie -t &
 exec nm-applet
-exec firewall-applet
-exec st -e tmux -2 attach -t main
+exec onboard
+exec blueman-applet
+exec st -e tmux -2 attach-session -t main
 exec KEYBASE_START_UI=hideWindow /opt/keybase/Keybase &>> ~/.cache/keybase/Keybase.app.log
 exec libinput-gestures -c ~/.config/libinput-gestures/i3.conf
 #exec google-chrome-beta
