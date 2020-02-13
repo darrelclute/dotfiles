@@ -55,6 +55,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'jinja'
 Plugin 'elzr/vim-json'
+Plugin 'hashivim/vim-terraform'
+Plugin 'hashivim/vim-packer'
+Plugin 'hashivim/vim-vagrant'
 call vundle#end()
 
 filetype plugin indent on
