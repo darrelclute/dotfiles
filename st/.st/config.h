@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Hack:style=Regular:size=8:antialias=true,PowerlineSymbols:style=Medium:size=8:antialias=true,Source Code Pro:style=Regular:size=8:antialias=true,Droid Sans:style=Regular:size=8:antialias=true";
+static char *font = "Hack:style=Regular:size=7:antialias=true,Siji:style=Regular:size=7:antialias=true,PowerlineSymbols:style=Medium:size=7:antialias=true,Source Code Pro:style=Regular:size=7:antialias=true,Droid Sans:style=Regular:size=7:antialias=true";
 static int borderpx = 1;
 
 /*
