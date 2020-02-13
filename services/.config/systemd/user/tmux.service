@@ -6,6 +6,7 @@ Before=cli.target
 After=environment.target powerline.service
 
 [Service]
+Environment="PATH=/usr/share/Modules/bin:%h/.local/bin:/usr/bin:/usr/local/bin:/usr/sbin:/usr/local/sbin:/var/lib/snapd/snap/bin"
 Type=forking
 ExecStart=/usr/bin/tmux new-session -d -A -s main
 ExecStop=/usr/bin/tmux kill-session -t main
