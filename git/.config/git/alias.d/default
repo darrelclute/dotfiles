@@ -8,5 +8,5 @@
 	log-branch = log --color --graph --pretty=format:'%Cred%h%Creset - %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
 	log-author = !"git log --format='%aN <%aE>' | sort -u #"
 	clone-altmail = !"git clone $1 ~/repos/`basename $1 | awk -F'.' '{print $1}'` && cd $_ && git config user.email $2 #"
-        request-review = !"git log --show-signature --patch master...upstream/merge-requests/$1 #"
-        request-merge = !"REVIEWED=1 git merge --no-ff upstream/merge-requests/$1 #"
+	request-review = !"git log --show-signature --patch master...upstream/merge-requests/$1 #"
+	request-merge = !"REVIEWED=1 git merge --no-ff upstream/merge-requests/$1 #"
