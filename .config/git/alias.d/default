@@ -10,3 +10,4 @@
 	clone-altmail = !"git clone $1 ~/repos/`basename $1 | awk -F'.' '{print $1}'` && cd $_ && git config user.email $2 #"
 	request-review = !"git log --show-signature --patch master...upstream/merge-requests/$1 #"
 	request-merge = !"REVIEWED=1 git merge --no-ff upstream/merge-requests/$1 #"
+        clone-dcc = !"git clone $1 ~/projects/dcc/repos/`basename $1 | awk -F'.' '{print $1}'` && cd $_ #"

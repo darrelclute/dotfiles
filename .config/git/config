@@ -25,7 +25,9 @@
 	pushInsteadOf = "https://gist.github.com/"
 [include]
 	path = alias.d/default
+	path = alias.d/clients
 	path = config.d/default
+	path = config.d/clients
 [commit]
 	gpgSign = 1
 	verbose = 1
