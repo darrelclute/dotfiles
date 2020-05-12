@@ -6,7 +6,7 @@ Wants=graphical-session-pre.target
 After=graphical-session-pre.target
 
 [Service]
-Environment="PATH=/usr/share/Modules/bin:%h/.local/bin:/usr/bin:/usr/local/bin:/usr/sbin:/usr/local/sbin:/var/lib/snapd/snap/bin"
+Environment="PATH=%h/.local/bin:/usr/share/Modules/bin:/usr/bin:/usr/local/bin:/usr/sbin:/usr/local/sbin:/var/lib/snapd/snap/bin"
 Type=simple
 ExecStart=/usr/bin/sway
 Restart=on-failure
