@@ -1,0 +1,22 @@
+#!/bin/bash
+
+YDO_CMD="ydotool key"
+
+swaymsg [class='zoom' title='Meeting'] focus
+
+case "${1}" in
+    mute)
+        ${YDO_CMD} alt+a
+        ;;
+    camera)
+        ${YDO_CMD} alt+n
+        ;;
+    video)
+        ${YDO_CMD} alt+v
+        ;;
+    fullscreen)
+        ${YDO_CMD} super+f
+        ;;
+esac
+
+swaymsg workspace back_and_forth
