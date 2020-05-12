@@ -61,7 +61,6 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] ; then
     if [[ -f $HOME/.config/sway/config ]] && [[ -x /usr/bin/sway ]] ; then
 	GDK_BACKEND=wayland
 	CLUTTER_BACKEND=wayland
-	QT_QPA_PLATFORM=wayland-egl
 	QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 	ECORE_EVAS_ENGINE=wayland_egl
 	ELM_ENGINE=wayland_egl
