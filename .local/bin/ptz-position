@@ -1,0 +1,22 @@
+#!/bin/bash
+
+CAMERA=$(v4l2-ctl --list-devices | grep -A1 "USB2.0 Camera" | tail -n1)
+V4L2_CMD="v4l2-ctl -d ${CAMERA} -c"
+
+case "${1}" in
+    mom)
+        ${V4L2_CMD} pan_absolute=$(expr 3600 \* 35),tilt_absolute=0,zoom_absolute=64
+        ;;
+    dad)
+        ${V4L2_CMD} pan_absolute=-$(expr 3600 \* 8),tilt_absolute=$(expr 3600*2),zoom_absolute=64
+        ;;
+    home)
+        ${V4L2_CMD} pan_absolute=$(expr 3600 \* 16),tilt_absolute=0,zoom_absolute=0
+        ;;
+    fish)
+        ${V4L2_CMD} pan_absolute=-$(expr 3600 \* 61),tilt_absolute=0,zoom_absolute=6
+        ;;
+    sleep)
+        ${V4L2_CMD} pan_absolute=-612000,tilt_absolute=-108000,zoom_absolute=0
+        ;;
+esac
