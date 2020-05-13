@@ -19,4 +19,4 @@ case "${1}" in
         ;;
 esac
 
-swaymsg workspace back_and_forth
+swaymsg [class='zoom' title='Participant'] focus
