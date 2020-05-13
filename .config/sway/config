@@ -1,0 +1,331 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+# This config file uses keycodes (bindsym) and was written for the QWERTY
+# layout.
+#
+# To get a config file with the same key positions, but for your current
+# layout, use the i3-config-wizard
+#
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+font pango:Hack:style=Regular:antialias=true 9, pango:PowerlineSymbols:style=Medium:antialias=true 9, pango:Source Code Pro:style=Regular:antialias=true 9
+# Before i3 v4.8, we used to recommend this one as the default:
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# X core fonts rendering does not support right-to-left and this being a bitmap
+# font, it doesn’t scale on retina/hidpi displays.
+
+# Switching to same workspace twice will return you to previous workspace.
+workspace_auto_back_and_forth yes
+
+default_border none
+hide_edge_borders both
+
+# Move mouse to focused container
+mouse_warping container
+
+# Lave fullscreen if a popup is triggered
+popup_during_fullscreen leave_fullscreen
+
+# use these keys for focus, movement, and resize directions when reaching for
+# the arrows is not convenient
+set $up k
+set $down j
+set $left h
+set $right l
+
+# Aliases for modifiers
+set $defmod Mod4
+set $super Mod4
+set $alt Mod1
+set $hyper $alt+$super+Shift+Control
+
+# Aliases for workspaces
+set $ws1 1 terminal
+set $ws2 2 chrome
+set $ws3 3 slack
+set $ws4 4 virt
+set $ws5 5 firefox
+set $ws6 6 office
+set $ws7 7 conference
+set $ws8 8 keybase
+set $ws9 9 misc
+
+# Workspace screen assignment
+workspace $ws1 output eDP-1
+workspace $ws2 output eDP-1
+workspace $ws3 output eDP-1
+workspace $ws4 output eDP-1
+workspace $ws5 output eDP-1
+workspace $ws6 output eDP-1
+workspace $ws7 output DP-1 DP-2
+workspace $ws8 output eDP-1
+workspace $ws9 output eDP-1
+
+# Application to workspace assignment
+assign [class="Slack"] $ws3
+assign [class="Google-chrome"] $ws2
+assign [class="Google-chrome-beta"] $ws2
+assign [class="Google-chrome-unstable"] $ws2
+assign [class="konsole"] $ws1
+assign [class="urxvt"] $ws1
+assign [class="URxvt"] $ws1
+assign [class="st"] $ws1
+assign [class="st-256color"] $ws1
+assign [class="libreoffice-starcenter"] $ws6
+assign [class="libreoffice"] $ws6
+assign [class="Firefox"] $ws5
+assign [class="firefox"] $ws5
+assign [app_id="firefox"] $ws5
+assign [class="Bluejeans"] $ws7
+assign [class="zoom"] $ws7
+assign [class="Virt-manager"] $ws4
+assign [class="virt-manager"] $ws4
+assign [class="Remote-viewer"] $ws4
+assign [class="remote-viewer"] $ws4
+assign [class="Keybase"] $ws8
+assign [class="keybase"] $ws8
+
+# use Mouse+$defmod to drag floating windows to their wanted position
+floating_modifier $defmod
+
+# start a terminal
+bindsym $defmod+Return exec st -e tmux -2 attach -t main
+
+# start chrome
+#bindsym $defmod+
+
+# kill focused window
+bindsym $defmod+Shift+q kill
+
+# start bemenu (a program launcher)
+bindsym $defmod+d exec bemenu-run -p run: -i
+
+# start passmenu
+bindsym $defmod+p exec passmenu --type -p password: -i
+
+# start lpassmenu
+bindsym $defmod+Shift+p exec lpassmenu --type -p LastPass: -i
+
+# reset camera
+#bindsym $defmod+v exec v4l2-ctl -d 4 -c focus_auto=0,exposure_auto=1,zoom_absolute=220,exposure_absolute=208
+
+# Control PTZ Camera Positions
+bindsym $hyper+1 exec ptz-position dad
+bindsym $hyper+2 exec ptz-position mom
+bindsym $hyper+3 exec ptz-position home
+bindsym $hyper+4 exec ptz-position home
+bindsym $hyper+5 exec ptz-position home
+bindsym $hyper+6 exec ptz-position home
+bindsym $hyper+7 exec ptz-position home
+bindsym $hyper+8 exec ptz-position fish
+bindsym $hyper+9 exec ptz-position sleep
+bindsym $hyper+0 exec ptz-position home
+
+# Switch Camera in Zoom
+bindsym $defmod+Shift+n exec zoomctl camera
+
+# Mute/Unmute in Zoom
+bindsym $defmod+Shift+a exec zoomctl mute
+
+# Disable/Enable video in Zoom
+bindsym $defmod+Shift+v exec zoomctl video
+
+# Fullscreen in Zoom
+bindsym $defmod+Shift+f exec zoomctl fullscreen
+
+# dismiss notifications
+bindsym $defmod+n exec makoctl dismiss -a
+
+# change focus, vim motion keys
+bindsym $defmod+$left focus left
+bindsym $defmod+$down focus down
+bindsym $defmod+$up focus up
+bindsym $defmod+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $defmod+Left focus left
+bindsym $defmod+Down focus down
+bindsym $defmod+Up focus up
+bindsym $defmod+Right focus right
+
+# move focused window, vim motion keys
+bindsym $defmod+Shift+$left move left
+bindsym $defmod+Shift+$down move down
+bindsym $defmod+Shift+$up move up
+bindsym $defmod+Shift+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym $defmod+Shift+Left move left
+bindsym $defmod+Shift+Down move down
+bindsym $defmod+Shift+Up move up
+bindsym $defmod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $defmod+bar split h
+
+# split in vertical orientation
+bindsym $defmod+minus split v
+
+# enter fullscreen mode for the focused container
+bindsym $defmod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $defmod+s layout stacking
+bindsym $defmod+w layout tabbed
+bindsym $defmod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $defmod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $defmod+space focus mode_toggle
+
+# focus the parent container
+bindsym $defmod+a focus parent
+
+# focus the child container
+#bindsym $defmod+d focus child
+
+# move the currently focused window to the scratchpad
+#bindsym $defmod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+#bindsym $defmod+minus scratchpad show
+
+# switch to workspace
+bindsym $defmod+1 workspace $ws1
+bindsym $defmod+2 workspace $ws2
+bindsym $defmod+3 workspace $ws3
+bindsym $defmod+4 workspace $ws4
+bindsym $defmod+5 workspace $ws5
+bindsym $defmod+6 workspace $ws6
+bindsym $defmod+7 workspace $ws7
+bindsym $defmod+8 workspace $ws8
+bindsym $defmod+9 workspace $ws9
+
+# move focused container to workspace
+bindsym $defmod+Shift+1 move container to workspace $ws1
+bindsym $defmod+Shift+2 move container to workspace $ws2
+bindsym $defmod+Shift+3 move container to workspace $ws3
+bindsym $defmod+Shift+4 move container to workspace $ws4
+bindsym $defmod+Shift+5 move container to workspace $ws5
+bindsym $defmod+Shift+6 move container to workspace $ws6
+bindsym $defmod+Shift+7 move container to workspace $ws7
+bindsym $defmod+Shift+8 move container to workspace $ws8
+bindsym $defmod+Shift+9 move container to workspace $ws9
+
+# reload the configuration file
+bindsym $defmod+Shift+c reload
+# exit i3 (logs you out of your X session)
+bindsym $defmod+Shift+e exit
+# lock i3
+bindsym $alt+Control+l exec loginctl lock-session ${XDG_SESSION_ID}
+
+# mpd controls
+# play/pause output
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioPrev exec mpc prev
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioStop exec mpc stop
+
+# Control volume (mute/unmute)
+bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 3%-
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 3%+
+
+# Control Screen Brightness
+bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec light -A 5
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 10 ppt
+        bindsym Down        resize grow height 10 px or 10 ppt
+        bindsym Up          resize shrink height 10 px or 10 ppt
+        bindsym Right       resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $defmod+r mode "resize"
+
+
+input 1452:610:bcm {
+	accel_profile adaptive
+	dwt enabled
+	events disabled_on_external_mouse
+	natural_scroll enabled
+}
+
+input 9456:320:Metadot_-_Das_Keyboard_Das_Keyboard {
+	xkb_options "caps:ctrl_modifier"
+}
+
+input 1133:50180:Logitech_Trackball {
+	natural_scroll enabled
+}
+
+input 1386:18510:Wacom_HID_484E_Finger {
+	map_to_output eDP-1
+}
+
+input 1386:18510:Wacom_HID_484E_Pen {
+	map_to_output eDP-1
+}
+
+output eDP-1 {
+	bg #000000 solid_color
+	pos 0 0
+}
+
+output DP-1 {
+	bg #000000 solid_color
+	mode 3840x2160@30Hz
+}
+
+output DP-2 {
+	bg #000000 solid_color
+	mode 3840x2160@30Hz
+}
+
+exec swayidle -w \
+    timeout 300 'swaylock -f -c 000000 ; swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+    timeout 10 'if pgrep swaylock ; then swaymsg "output * dpms off" ; fi' resume 'if pgrep swaylock ; then swaymsg "output * dpms on" ; fi' \
+    before-sleep 'swaylock -f -c 000000' \
+    lock 'swaylock -f -c 000000' \
+    unlock 'if pgrep swaylock ; then swaymsg "output * dpms on" ; fi'
+#exec polkit-kde-authentication-agent-1 &
+exec polkit-gnome-authentication-agent-1 &
+exec waybar
+exec rot8
+exec mako
+exec kdeconnect-indicator
+exec systemctl --user start keybase.gui.service
+exec v4l2-ctl -c focus_auto=0,exposure_auto=1,zoom_absolute=220,exposure_absolute=208
+exec udiskie -t --appindicator &
+exec st -e tmux -2 attach -t main
+exec libinput-gestures -c ~/.config/libinput-gestures/sway.conf
+
+workspace $ws1
