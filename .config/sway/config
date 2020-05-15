@@ -84,13 +84,13 @@ bindsym $defmod+Return exec st -e tmux -2 attach -t main
 bindsym $defmod+Shift+q kill
 
 # start bemenu (a program launcher)
-bindsym $defmod+d exec bemenu-run -p run: -i
+bindsym $defmod+d exec bemenu-run -l 7 -n -p Run: -i
 
 # start passmenu
-bindsym $defmod+p exec passmenu --type -p password: -i
+bindsym $defmod+p exec passmenu --type -p Password: -i
 
 # start lpassmenu
-bindsym $defmod+Shift+p exec lpassmenu --type -p LastPass: -i
+bindsym $defmod+Shift+p exec lpassmenu type
 
 # reset camera
 #bindsym $defmod+v exec v4l2-ctl -d 4 -c focus_auto=0,exposure_auto=1,zoom_absolute=220,exposure_absolute=208
