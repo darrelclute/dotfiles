@@ -1,25 +1,12 @@
-# i3 config file (v4)
-#
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-#
-# This config file uses keycodes (bindsym) and was written for the QWERTY
-# layout.
-#
-# To get a config file with the same key positions, but for your current
-# layout, use the i3-config-wizard
-#
+# Include Input and Output configurations
+include `hostname -s`/input.conf
+include `hostname -s`/output.conf
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 font pango:Hack:style=Regular:antialias=true 9, pango:PowerlineSymbols:style=Medium:antialias=true 9, pango:Source Code Pro:style=Regular:antialias=true 9
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
 
 # Switching to same workspace twice will return you to previous workspace.
 workspace_auto_back_and_forth yes
@@ -58,15 +45,7 @@ set $ws8 8 keybase
 set $ws9 9 misc
 
 # Workspace screen assignment
-workspace $ws1 output eDP-1
-workspace $ws2 output eDP-1
-workspace $ws3 output eDP-1
-workspace $ws4 output eDP-1
-workspace $ws5 output eDP-1
-workspace $ws6 output eDP-1
-workspace $ws7 output DP-1 DP-2
-workspace $ws8 output eDP-1
-workspace $ws9 output eDP-1
+include `hostname -s`/workspace-assignment.conf
 
 # Application to workspace assignment
 assign [class="Slack"] $ws3
@@ -270,45 +249,6 @@ mode "resize" {
 }
 
 bindsym $defmod+r mode "resize"
-
-
-input 1452:610:bcm {
-	accel_profile adaptive
-	dwt enabled
-	events disabled_on_external_mouse
-	natural_scroll enabled
-}
-
-input 9456:320:Metadot_-_Das_Keyboard_Das_Keyboard {
-	xkb_options "caps:ctrl_modifier"
-}
-
-input 1133:50180:Logitech_Trackball {
-	natural_scroll enabled
-}
-
-input 1386:18510:Wacom_HID_484E_Finger {
-	map_to_output eDP-1
-}
-
-input 1386:18510:Wacom_HID_484E_Pen {
-	map_to_output eDP-1
-}
-
-output eDP-1 {
-	bg #000000 solid_color
-	pos 0 0
-}
-
-output DP-1 {
-	bg #000000 solid_color
-	mode 3840x2160@30Hz
-}
-
-output DP-2 {
-	bg #000000 solid_color
-	mode 3840x2160@30Hz
-}
 
 exec swayidle -w \
     timeout 300 'swaylock -f -c 000000 ; swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
