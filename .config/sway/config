@@ -1,6 +1,6 @@
 # Include Input and Output configurations
-include `hostname -s`/input.conf
-include `hostname -s`/output.conf
+include ~/.config/sway/`hostname\ -s`/input.conf
+include ~/.config/sway/`hostname\ -s`/output.conf
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -45,7 +45,7 @@ set $ws8 8 keybase
 set $ws9 9 misc
 
 # Workspace screen assignment
-include `hostname -s`/workspace-assignment.conf
+include ~/.config/sway/`hostname\ -s`/workspace-assignment.conf
 
 # Application to workspace assignment
 assign [class="Slack"] $ws3
