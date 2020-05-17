@@ -45,15 +45,15 @@ set $alt Mod1
 set $hyper $alt+$super+Shift+Control
 
 # Aliases for workspaces
-set $ws1 1 terminal
-set $ws2 2 chrome
-set $ws3 3 slack
-set $ws4 4 virt
-set $ws5 5 firefox
-set $ws6 6 office
-set $ws7 7 conference
-set $ws8 8 keybase
-set $ws9 9 misc
+set $ws1 "1 terminal"
+set $ws2 "2 chrome"
+set $ws3 "3 slack"
+set $ws4 "4 virt"
+set $ws5 "5 firefox"
+set $ws6 "6 office"
+set $ws7 "7 conference"
+set $ws8 "8 keybase"
+set $ws9 "9 misc"
 
 # Workspace screen assignment
 workspace $ws1 output DP-2
