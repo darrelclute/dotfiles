@@ -10,6 +10,24 @@ case "${1}" in
     dad)
         ${V4L2_CMD} pan_absolute=-$(expr 3600 \* 8),tilt_absolute=$(expr 3600 \* 2),zoom_absolute=64
         ;;
+    seat3)
+        ${V4L2_CMD} pan_absolute=$(expr 3600 \* 8),tilt_absolute=-$(expr 3600 \* 4),zoom_absolute=64
+        ;;
+    seat4)
+        ${V4L2_CMD} pan_absolute=$(expr 3600 \* 20),tilt_absolute=-$(expr 3600 \* 4),zoom_absolute=64
+        ;;
+    seat5)
+        ${V4L2_CMD} pan_absolute=$(expr 3600 \* 28),tilt_absolute=-$(expr 3600 \* 4),zoom_absolute=64
+        ;;
+    seat6)
+        ${V4L2_CMD} pan_absolute=$(expr 3600 \* 4),tilt_absolute=-$(expr 3600 \* 2),zoom_absolute=64
+        ;;
+    seat7)
+        ${V4L2_CMD} pan_absolute=$(expr 3600 \* 8),tilt_absolute=-$(expr 3600 \* 2),zoom_absolute=64
+        ;;
+    seat8)
+        ${V4L2_CMD} pan_absolute=$(expr 3600 \* 12),tilt_absolute=-$(expr 3600 \* 2),zoom_absolute=64
+        ;;
     home)
         ${V4L2_CMD} pan_absolute=$(expr 3600 \* 16),tilt_absolute=$(expr 3600 \* 4),zoom_absolute=6
         ;;

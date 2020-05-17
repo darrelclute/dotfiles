@@ -128,12 +128,12 @@ bindsym $defmod+Shift+p exec lpassmenu type
 # Control PTZ Camera Positions
 bindsym $hyper+1 exec ptz-position dad
 bindsym $hyper+2 exec ptz-position mom
-bindsym $hyper+3 exec ptz-position home
-bindsym $hyper+4 exec ptz-position home
-bindsym $hyper+5 exec ptz-position home
-bindsym $hyper+6 exec ptz-position home
-bindsym $hyper+7 exec ptz-position home
-bindsym $hyper+8 exec ptz-position fish
+bindsym $hyper+3 exec ptz-position seat3
+bindsym $hyper+4 exec ptz-position seat4
+bindsym $hyper+5 exec ptz-position seat5
+bindsym $hyper+6 exec ptz-position seat6
+bindsym $hyper+7 exec ptz-position seat7
+bindsym $hyper+8 exec ptz-position seat8
 bindsym $hyper+9 exec ptz-position sleep
 bindsym $hyper+0 exec ptz-position home
 
