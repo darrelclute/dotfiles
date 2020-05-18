@@ -1,22 +1,24 @@
 #!/bin/bash
 
-YDO_CMD="ydotool key"
 
-swaymsg [class='zoom' title='Meeting'] focus
+DO_CMD="ydotool key"
+MSG_CMD="swaymsg"
+
+$MSG_CMD [class='zoom' title='Meeting'] focus
 
 case "${1}" in
     mute)
-        ${YDO_CMD} alt+a
+        ${DO_CMD} alt+a
         ;;
     camera)
-        ${YDO_CMD} alt+n
+        ${DO_CMD} alt+n
         ;;
     video)
-        ${YDO_CMD} alt+v
+        ${DO_CMD} alt+v
         ;;
     fullscreen)
-        ${YDO_CMD} super+f
+        ${DO_CMD} super+f
         ;;
 esac
 
-swaymsg [class='zoom' title='Participant'] focus
+$MSG_CMD [class='zoom' title='Participant'] focus
