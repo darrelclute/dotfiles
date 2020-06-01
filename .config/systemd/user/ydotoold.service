@@ -1,0 +1,10 @@
+[Unit]
+Description=libinput based ydotool deamon
+IgnoreOnIsolate=true
+Wants=cli.target
+
+[Service]
+ExecStart=/usr/bin/ydotoold
+
+[Install]
+WantedBy=default.target
