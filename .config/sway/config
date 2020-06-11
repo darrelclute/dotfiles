@@ -87,7 +87,7 @@ bindsym $defmod+Shift+q kill
 bindsym $defmod+d exec bemenu-run -l 7 -n -p Run: -i
 
 # start passmenu
-bindsym $defmod+p exec passmenu --type -p Password: -i
+bindsym $defmod+p exec passmenu
 
 # start lpassmenu
 bindsym $defmod+Shift+p exec lpassmenu type
