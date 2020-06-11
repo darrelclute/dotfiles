@@ -1,23 +1,35 @@
 #!/bin/bash
 
 
-DO_CMD="ydotool key"
+DO_KEY="ydotool key"
+DO_MOUSEMOVE="ydotool mousemove"
+DO_CLICK="ydotool click"
 MSG_CMD="swaymsg"
 
 $MSG_CMD [class='zoom' title='Meeting'] focus
 
 case "${1}" in
     mute)
-        ${DO_CMD} alt+a
+        ${DO_KEY} alt+a
         ;;
     camera)
-        ${DO_CMD} alt+n
+        ${DO_KEY} alt+n
         ;;
     video)
-        ${DO_CMD} alt+v
+        ${DO_KEY} alt+v
         ;;
     fullscreen)
-        ${DO_CMD} super+f
+        ${DO_KEY} super+f
+        ;;
+    prev)
+        ${DO_MOUSEMOVE} 975 550
+        ${DO_CLICK} 1
+        sleep 1
+        ;;
+    next)
+        ${DO_MOUSEMOVE} 2850 550
+        ${DO_CLICK} 1
+        sleep 1
         ;;
 esac
 
