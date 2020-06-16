@@ -33,3 +33,5 @@
 	verbose = 1
 [gpg]
 	program = /usr/bin/gpg2
+[pull]
+	rebase = true
