@@ -93,7 +93,7 @@ bindsym $defmod+p exec passmenu
 bindsym $defmod+Shift+p exec lpassmenu type
 
 # reset camera
-bindsym $defmod+v exec logitech-cam desk
+bindsym $defmod+v exec logitech-cam default
 
 # Control PTZ Camera Positions
 bindsym $hyper+1 exec ptz-position dad
