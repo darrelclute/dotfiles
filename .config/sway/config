@@ -257,6 +257,7 @@ exec swayidle -w \
     lock 'swaylock -f -c 000000' \
     unlock 'if pgrep swaylock ; then swaymsg "output * dpms on" ; fi'
 #exec polkit-kde-authentication-agent-1 &
+exec xrdb -load ~/.Xresources
 exec polkit-gnome-authentication-agent-1 &
 exec waybar
 exec rot8
