@@ -1,36 +1,270 @@
 #!/bin/bash
 
+declare -A meeting_ids
+declare -A meeting_pws
+declare -A meeting_names
 
-DO_KEY="ydotool key"
-DO_MOUSEMOVE="ydotool mousemove"
-DO_CLICK="ydotool click"
-MSG_CMD="swaymsg"
+if [[ -f ${HOME}/.config/zoomctl.conf ]] ; then
+    source ${HOME}/.config/zoomctl.conf
+fi
 
-$MSG_CMD [class='zoom' title='Meeting'] focus
+# 
+
+
+if [[ -n "${SWAYSOCK}" ]] ; then
+    MSG_CMD="swaymsg"
+else
+    MSG_CMD="i3-msg"
+fi
+
+if which ydotool >/dev/null ; then
+    DO_TOOL="ydotool"
+elif which xdotool >/dev/null ; then
+    DO_TOOL="xdotool"
+fi
+
+function updeck {
+    if pgrep -f love.*UPDeck > /dev/null ; then
+        sleep 1
+    else
+        love ~/Downloads/UPDeck_${UPDECK_VERSION}.love &
+        sleep 1
+        until pgrep -f love.*UPDeck > /dev/null ; do
+            sleep 1
+        done
+    fi
+}
+
+function launchobs {
+    if pgrep -f /usr/bin/obs >/dev/null ; then
+        sleep 1
+    else
+        QT_QPA_PLATFORM=xcb /usr/bin/obs &
+        sleep 1
+        until ${MSG_CMD} [class='obs'] focus ; do
+            sleep 1
+        done
+    fi
+}
+
+function camerasetup {
+    ptzctl ptz-home
+    sleep 1
+    logictl logi-desk
+    sleep 1
+}
+
+function audiosetup {
+    sinkctl sink-room
+    sleep 1
+    sourcectl source-room
+    sleep 1
+}
+
+function launchzoom {
+    if pgrep -f /opt/zoom/zoom > /dev/null ; then
+        sleep 1
+    else
+        zoom &
+        until pgrep -f /opt/zoom/zoom > /dev/null ; do
+            sleep 1
+        done
+        sleep 1
+    fi
+    zoom zoommtg://zoom.us/join?confno=${meeting_ids[${1}]}\&pwd=${meeting_pws[${1}]}\&zc=0\&uname="${meeting_names[${1}]}"
+}
+
+function participants {
+    until ${MSG_CMD} [app_id='zoom' title='(Meeting|Webinar)'] focus ; do
+        sleep 1
+    done
+    ${DO_TOOL} key alt+u
+}
+
+function obssetup {
+    ${MSG_CMD} workspace "9 misc"
+    ${MSG_CMD} layout tabbed
+    #launchobs
+    updeck
+    #${MSG_CMD} [class='obs'] focus
+    camerasetup
+}
+
+function meeting_setup {
+    audiosetup
+    obssetup
+    launchzoom ${1}
+}
+
+function ptzctl {
+    case "${1}" in
+        ptz-mom)
+            PAN="32"
+            TILT="0"
+            ZOOM="64"
+            ;;
+        ptz-seat1)
+            PAN="-24"
+            TILT="-4"
+            ZOOM="64"
+            ;;
+        ptz-seat2)
+            PAN="-12"
+            TILT="-4"
+            ZOOM="64"
+            ;;
+        ptz-seat3)
+            PAN="0"
+            TILT="-4"
+            ZOOM="64"
+            ;;
+        ptz-seat4)
+            PAN="14"
+            TILT="-4"
+            ZOOM="64"
+            ;;
+        ptz-seat5)
+            PAN="24"
+            TILT="-4"
+            ZOOM="64"
+            ;;
+        ptz-seat6)
+            PAN="16"
+            TILT="0"
+            ZOOM="64"
+            ;;
+        ptz-home)
+            PAN="0"
+            TILT="0"
+            ZOOM="10"
+            ;;
+        ptz-sleep)
+            PAN="-170"
+            TILT="-30"
+            ZOOM="0"
+            ;;
+    esac
+    v4l2-ctl -d ${PTZ_CAM} -c pan_absolute=$(echo 3600*${PAN} | bc),tilt_absolute=$(echo 3600*${TILT} | bc),zoom_absolute=${ZOOM}
+}
+
+function logictl {
+    case "${1}" in
+        logi-default)
+            ZOOM=100
+            ;;
+        logi-desk)
+            ZOOM=140
+            ;;
+    esac
+    v4l2-ctl -d ${DESK_CAM} -c focus_auto=0,white_balance_temperature_auto=1,zoom_absolute=${ZOOM}
+}
+
+function zoom_interact {
+    ${MSG_CMD} [app_id='zoom' title='(Meeting|Webinar)'] focus
+    ${DO_TOOL} ${1}
+    sleep 1
+}
+
+function mousectl {
+    ${DO_TOOL} mousemove ${1}
+    ${DO_TOOL} click 1
+    sleep 1
+}
+
+function sourcectl {
+    case "${1}" in
+        source-room)
+            SOURCE=${ROOM_SOURCE}
+            ;;
+        source-headset)
+            SOURCE=${HEADSET_SOURCE}
+            ;;
+    esac
+    pactl set-default-source ${SOURCE}
+}
+
+function sinkctl {
+    case "${1}" in
+        sink-room)
+            SINK=${ROOM_SINK}
+            ;;
+        sink-headset)
+            SINK=${HEADSET_SINK}
+            ;;
+        sink-combined)
+            SINK=combined
+            ;;
+    esac
+    pactl set-default-sink ${SINK}
+}
+
+function participantfocus {
+    ${MSG_CMD} [app_id='zoom' title='Participant'] focus
+}
 
 case "${1}" in
+    join)
+        shift
+        meeting_setup ${1}
+        ;;
     mute)
-        ${DO_KEY} alt+a
+        zoom_interact "key alt+a"
+        participantfocus
         ;;
     camera)
-        ${DO_KEY} alt+n
+        zoom_interact "key alt+n"
+        participantfocus
         ;;
     video)
-        ${DO_KEY} alt+v
+        zoom_interact "key alt+v"
+        participantfocus
         ;;
     fullscreen)
-        ${DO_KEY} super+f
+        mousectl "1900 20"
+        ;;
+    viewtoggle)
+        mousectl "1825 20"
         ;;
     prev)
-        ${DO_MOUSEMOVE} 975 550
-        ${DO_CLICK} 1
-        sleep 1
+        mousectl "20 550"
         ;;
     next)
-        ${DO_MOUSEMOVE} 2850 550
-        ${DO_CLICK} 1
-        sleep 1
+        mousectl "1900 550"
+        ;;
+    hand)
+        participantfocus
+        mousectl "2000 600"
+        ;;
+    logi-*)
+        logictl ${1}
+        ;;
+    ptz-*)
+        ptzctl ${1}
+        ;;
+    updeck)
+        updeck
+        ;;
+    obs)
+        obssetup
+        ;;
+    source-*)
+        sourcectl ${1}
+        ;;
+    sink-*)
+        sinkctl ${1}
+        ;;
+    camerasetup)
+        camerasetup
+        ;;
+    showparticipants)
+        participants
+        participantfocus
+        ;;
+    focusparticipants)
+        participantfocus
+        ;;
+    leave)
+        zoom_interact "key alt+q"
+        zoom_interact "key Enter"
         ;;
 esac
-
-$MSG_CMD [class='zoom' title='Participant'] focus
