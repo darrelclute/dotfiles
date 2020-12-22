@@ -153,7 +153,7 @@ function logictl {
             ZOOM=100
             ;;
         logi-desk)
-            ZOOM=140
+            ZOOM=120
             ;;
     esac
     v4l2-ctl -d ${DESK_CAM} -c focus_auto=0,white_balance_temperature_auto=1,zoom_absolute=${ZOOM}
