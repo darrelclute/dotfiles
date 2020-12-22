@@ -2,6 +2,14 @@
 include ~/.config/sway/`hostname\ -s`/input.conf
 include ~/.config/sway/`hostname\ -s`/output.conf
 
+input * {
+    dwt enabled
+}
+
+seat * {
+    hide_cursor 5000
+}
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -18,7 +26,7 @@ hide_edge_borders both
 mouse_warping container
 
 # Lave fullscreen if a popup is triggered
-popup_during_fullscreen leave_fullscreen
+popup_during_fullscreen smart
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -35,8 +43,8 @@ set $hyper $alt+$super+Shift+Control
 
 # Aliases for workspaces
 set $ws1 1 terminal
-set $ws2 2 chrome
-set $ws3 3 slack
+set $ws2 2 browser
+set $ws3 3 chat
 set $ws4 4 virt
 set $ws5 5 firefox
 set $ws6 6 office
@@ -49,9 +57,7 @@ include ~/.config/sway/`hostname\ -s`/workspace-assignment.conf
 
 # Application to workspace assignment
 assign [class="Slack"] $ws3
-assign [class="Google-chrome"] $ws2
-assign [class="Google-chrome-beta"] $ws2
-assign [class="Google-chrome-unstable"] $ws2
+assign [class="Google-chrome*"] $ws2
 assign [class="konsole"] $ws1
 assign [class="urxvt"] $ws1
 assign [class="URxvt"] $ws1
@@ -59,17 +65,28 @@ assign [class="st"] $ws1
 assign [class="st-256color"] $ws1
 assign [class="libreoffice-starcenter"] $ws6
 assign [class="libreoffice"] $ws6
-assign [class="Firefox"] $ws5
-assign [class="firefox"] $ws5
-assign [app_id="firefox"] $ws5
+assign [class="Firefox"] $ws2
+assign [class="firefox"] $ws2
+assign [app_id="firefox"] $ws2
 assign [class="Bluejeans"] $ws7
-assign [class="zoom"] $ws7
+assign [class="zoom" title="Participant"] $ws9
+assign [app_id="zoom" title="Participant"] $ws9
+assign [class="zoom" title="(Meeting|Webinar)"] $ws7
+assign [app_id="zoom" title="(Meeting|Webinar)"] $ws7
 assign [class="Virt-manager"] $ws4
 assign [class="virt-manager"] $ws4
 assign [class="Remote-viewer"] $ws4
 assign [class="remote-viewer"] $ws4
 assign [class="Keybase"] $ws8
 assign [class="keybase"] $ws8
+
+# Idle inihibition
+for_window [class="Google-chrome*" title="^Meet - "] inhibit_idle open
+for_window [class="zoom" title="(Meeting|Webinar)"] inhibit_idle open
+for_window [app_id="zoom" title="(Meeting|Webinar)"] inhibit_idle open
+for_window [class="vlc"] inhibit_idle fullscreen
+for_window [app_id="love" title="UP Deck"] move scratchpad
+for_window [class="love" title="UP Deck"] move scratchpad
 
 # use Mouse+$defmod to drag floating windows to their wanted position
 floating_modifier $defmod
@@ -173,11 +190,11 @@ bindsym $defmod+a focus parent
 #bindsym $defmod+d focus child
 
 # move the currently focused window to the scratchpad
-#bindsym $defmod+Shift+minus move scratchpad
+bindsym $defmod+Shift+equal move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-#bindsym $defmod+minus scratchpad show
+bindsym $defmod+equal scratchpad show
 
 # switch to workspace
 bindsym $defmod+1 workspace $ws1
@@ -250,22 +267,11 @@ mode "resize" {
 
 bindsym $defmod+r mode "resize"
 
-exec swayidle -w \
-    timeout 300 'swaylock -f -c 000000 ; swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-    timeout 10 'if pgrep swaylock ; then swaymsg "output * dpms off" ; fi' resume 'if pgrep swaylock ; then swaymsg "output * dpms on" ; fi' \
-    before-sleep 'swaylock -f -c 000000' \
-    lock 'swaylock -f -c 000000' \
-    unlock 'if pgrep swaylock ; then swaymsg "output * dpms on" ; fi'
-#exec polkit-kde-authentication-agent-1 &
+include /etc/sway/config.d/10-service.conf
+#exec systemctl --user start rot8.service swayidle.service waybar.service
 exec xrdb -load ~/.Xresources
 exec polkit-gnome-authentication-agent-1 &
-exec waybar
-exec rot8
-exec mako
-exec kdeconnect-indicator
-exec systemctl --user start keybase.gui.service
-exec udiskie -t --appindicator &
+exec nm-applet --indicator &
 exec st -e tmux -2 attach -t main
-exec libinput-gestures -c ~/.config/libinput-gestures/sway.conf
 
 workspace $ws1
