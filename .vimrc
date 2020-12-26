@@ -75,7 +75,7 @@ autocmd BufReadPost *
 \ endif
 autocmd BufNewFile,BufReadPre /media/*,/mnt/* set directory=~/tmp,/var/tmp,/tmp
 autocmd FileType text setlocal tw=78
-autocmd FileType python setlocal expandtab tabstop=4 ai
+autocmd FileType python setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4 ai
 autocmd FileType yaml setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2 ai
 autocmd FileType sh setlocal expandtab tabstop=4 softtabstop=4 shiftwidth=4 ai
 autocmd FileType json setlocal syntax=javascript expandtab tabstop=2 softtabstop=2 shiftwidth=2 ai
