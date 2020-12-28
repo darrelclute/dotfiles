@@ -87,6 +87,7 @@ for_window [app_id="zoom" title="(Meeting|Webinar)"] inhibit_idle open
 for_window [class="vlc"] inhibit_idle fullscreen
 for_window [app_id="love" title="UP Deck"] move scratchpad
 for_window [class="love" title="UP Deck"] move scratchpad
+for_window [class="anbox" title="JW Library"] inhibit_idle open
 
 # use Mouse+$defmod to drag floating windows to their wanted position
 floating_modifier $defmod
@@ -271,7 +272,7 @@ include /etc/sway/config.d/10-service.conf
 #exec systemctl --user start rot8.service swayidle.service waybar.service
 exec xrdb -load ~/.Xresources
 exec polkit-gnome-authentication-agent-1 &
-exec nm-applet --indicator &
 exec st -e tmux -2 attach -t main
+include ~/.config/sway/`hostname\ -s`/exec.conf
 
 workspace $ws1
