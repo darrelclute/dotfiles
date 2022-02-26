@@ -62,10 +62,14 @@ if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]] ; then
 	GDK_BACKEND=wayland
 	CLUTTER_BACKEND=wayland
 	QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+	QT_WAYLAND_FORCE_DPI=physical
+	QT_QPA_PLATFORMTHEME=gnome
+	QT_AUTO_SCREEN_SCALE_FACTOR=1
 	ECORE_EVAS_ENGINE=wayland_egl
 	ELM_ENGINE=wayland_egl
 	SDL_VIDEODRIVER=wayland
 	_JAVA_AWT_WM_NONREPARENTING=1
+	BEMENU_BACKEND=wayland
         exec sway
     elif [[ -f $HOME/.config/i3/config ]] && [[ -x /usr/bin/startx ]] ; then
         exec startx
