@@ -1,16 +1,15 @@
 #!/bin/bash
 
-CAMERA=$(v4l2-ctl --list-devices | grep -A1 "Logitech Webcam C930e" | tail -n1)
-V4L2_CMD="v4l2-ctl -d ${CAMERA} -c"
-
 case "${1}" in
     desk)
-        ${V4L2_CMD} focus_auto=0,exposure_auto=3,zoom_absolute=130
+        ZOOM=130
         ;;
     desk-livingroom)
-        ${V4L2_CMD} focus_auto=0,exposure_auto=3,zoom_absolute=160
+        ZOOM=160
         ;;
     default)
-        ${V4L2_CMD} focus_auto=1,exposure_auto=3,zoom_absolute=100
+        ZOOM=100
         ;;
 esac
+
+v4l2-ctl -d /dev/v4l/by-id/usb-046d_Logitech_Webcam_C930e_EB4D73DE-video-index0 -c focus_auto=0,exposure_auto=3,white_balance_temperature_auto=1,exposure_auto_priority=1,zoom_absolute=${ZOOM},focus_absolute=0
