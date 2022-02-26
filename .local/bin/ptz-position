@@ -1,40 +1,56 @@
 #!/bin/bash
 
-CAMERA=$(v4l2-ctl --list-devices | grep -A1 "USB2.0 Camera" | tail -n1)
-V4L2_CMD="v4l2-ctl -d ${CAMERA} -c"
-
 case "${1}" in
     mom)
-        ${V4L2_CMD} pan_absolute=$(expr 3600 \* 35),tilt_absolute=0,zoom_absolute=64
+        PAN="32"
+        TILT="0"
+        ZOOM="64"
         ;;
-    dad)
-        ${V4L2_CMD} pan_absolute=-$(expr 3600 \* 8),tilt_absolute=$(expr 3600 \* 2),zoom_absolute=64
+    seat1)
+        PAN="-24"
+        TILT="-4"
+        ZOOM="64"
+        ;;
+    seat2)
+        PAN="-12"
+        TILT="-4"
+        ZOOM="64"
         ;;
     seat3)
-        ${V4L2_CMD} pan_absolute=$(expr 3600 \* 8),tilt_absolute=-$(expr 3600 \* 4),zoom_absolute=64
+        PAN="0"
+        TILT="-4"
+        ZOOM="64"
         ;;
     seat4)
-        ${V4L2_CMD} pan_absolute=$(expr 3600 \* 20),tilt_absolute=-$(expr 3600 \* 4),zoom_absolute=64
+        PAN="14"
+        TILT="-4"
+        ZOOM="64"
         ;;
     seat5)
-        ${V4L2_CMD} pan_absolute=$(expr 3600 \* 28),tilt_absolute=-$(expr 3600 \* 4),zoom_absolute=64
+        PAN="24"
+        TILT="-4"
+        ZOOM="64"
         ;;
     seat6)
-        ${V4L2_CMD} pan_absolute=$(expr 3600 \* 4),tilt_absolute=-$(expr 3600 \* 2),zoom_absolute=64
-        ;;
-    seat7)
-        ${V4L2_CMD} pan_absolute=$(expr 3600 \* 8),tilt_absolute=-$(expr 3600 \* 2),zoom_absolute=64
-        ;;
-    seat8)
-        ${V4L2_CMD} pan_absolute=$(expr 3600 \* 12),tilt_absolute=-$(expr 3600 \* 2),zoom_absolute=64
+        PAN="16"
+        TILT="0"
+        ZOOM="64"
         ;;
     home)
-        ${V4L2_CMD} pan_absolute=$(expr 3600 \* 16),tilt_absolute=$(expr 3600 \* 4),zoom_absolute=6
+        PAN="0"
+        TILT="6"
+        ZOOM="6"
         ;;
     fish)
-        ${V4L2_CMD} pan_absolute=-$(expr 3600 \* 61),tilt_absolute=0,zoom_absolute=6
+        PAN="-61"
+        TILT="0"
+        ZOOM="6"
         ;;
     sleep)
-        ${V4L2_CMD} pan_absolute=-612000,tilt_absolute=-108000,zoom_absolute=0
+        PAN="-170"
+        TILT="-30"
+        ZOOM="0"
         ;;
 esac
+
+v4l2-ctl -d /dev/v4l/by-id/usb-USB2.0_Camera_USB2.0_Camera_35060591-video-index0 -c pan_absolute=$(echo 3600*${PAN} | bc),tilt_absolute=$(echo 3600*${TILT} | bc),zoom_absolute=${ZOOM}
