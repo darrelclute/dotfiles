@@ -63,6 +63,7 @@ assign [class="urxvt"] $ws1
 assign [class="URxvt"] $ws1
 assign [class="st"] $ws1
 assign [class="st-256color"] $ws1
+assign [app_id="Alacritty"] $ws1
 assign [class="libreoffice-starcenter"] $ws6
 assign [class="libreoffice"] $ws6
 assign [class="Firefox"] $ws2
@@ -79,6 +80,7 @@ assign [class="Remote-viewer"] $ws4
 assign [class="remote-viewer"] $ws4
 assign [class="Keybase"] $ws8
 assign [class="keybase"] $ws8
+assign [class="anbox" title="JW Library"] $ws9
 
 # Idle inihibition
 for_window [class="Google-chrome*" title="^Meet - "] inhibit_idle open
@@ -93,7 +95,7 @@ for_window [class="anbox" title="JW Library"] inhibit_idle open
 floating_modifier $defmod
 
 # start a terminal
-bindsym $defmod+Return exec st -e tmux -2 attach -t main
+bindsym $defmod+Return exec alacritty -e tmux -2 attach -t main
 
 # start chrome
 #bindsym $defmod+
@@ -272,7 +274,7 @@ include /etc/sway/config.d/10-service.conf
 #exec systemctl --user start rot8.service swayidle.service waybar.service
 exec xrdb -load ~/.Xresources
 exec polkit-gnome-authentication-agent-1 &
-exec st -e tmux -2 attach -t main
+exec alacritty -e tmux -2 attach -t main
 include ~/.config/sway/`hostname\ -s`/exec.conf
 
 workspace $ws1
