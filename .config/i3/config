@@ -46,8 +46,8 @@ set $hyper $alt+$super+Shift+Control
 
 # Aliases for workspaces
 set $ws1 "1 terminal"
-set $ws2 "2 chrome"
-set $ws3 "3 slack"
+set $ws2 "2 browser"
+set $ws3 "3 chat"
 set $ws4 "4 virt"
 set $ws5 "5 firefox"
 set $ws6 "6 office"
@@ -89,7 +89,7 @@ assign [class="Xournal"] $ws6
 for_window [class="xournal"] border none
 for_window [class="Xournal"] border none
 for_window [class="Firefox"] border none
-assign [class="Firefox"] $ws5
+assign [class="Firefox"] $ws2
 assign [class="Bluejeans"] $ws7
 assign [class="zoom"] $ws7
 assign [class="Virt-manager"] $ws4
@@ -120,7 +120,7 @@ bindsym $defmod+Shift+q kill
 bindsym $defmod+d exec bemenu-run -l 7 -n -p Run: -i
 
 # start passmenu
-bindsym $defmod+p exec passmenu --type -p password: -i
+bindsym $defmod+p exec passmenu
 
 # start lpassmenu
 bindsym $defmod+Shift+p exec lpassmenu type
@@ -151,11 +151,6 @@ bindsym $defmod+Shift+f exec zoomctl fullscreen
 
 # dismiss notifications
 bindsym $defmod+n exec makoctl dismiss -a
-
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $defmod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus, vim motion keys
 bindsym $defmod+$left focus left
@@ -208,11 +203,11 @@ bindsym $defmod+a focus parent
 #bindsym $defmod+d focus child
 
 # move the currently focused window to the scratchpad
-#bindsym $defmod+Shift+minus move scratchpad
+bindsym $defmod+Shift+equal move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-#bindsym $defmod+minus scratchpad show
+bindsym $defmod+equal scratchpad show
 
 # switch to workspace
 bindsym $defmod+1 workspace $ws1
@@ -257,6 +252,10 @@ bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master 3%-
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master 3%+
 
+# Control Screen Brightness
+bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec light -A 5
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -284,6 +283,8 @@ mode "resize" {
 bindsym $defmod+r mode "resize"
 
 exec --no-startup-id xsetroot -solid "#000000"
+exec rot8 --touchscreen 'Wacom 484E Pen' &
+exec rot8 --touchscreen 'Wacom 484E Finger' &
 exec gnome-screensaver
 exec --no-startup-id xss-lock -- gnome-screensaver-command -l
 exec_always --no-startup-id polybar-launch
@@ -294,7 +295,4 @@ exec nm-applet
 exec onboard
 exec blueman-applet
 exec st -e tmux -2 attach-session -t main
-exec KEYBASE_START_UI=hideWindow /opt/keybase/Keybase &>> ~/.cache/keybase/Keybase.app.log
 exec libinput-gestures -c ~/.config/libinput-gestures/i3.conf
-#exec google-chrome-beta
-#exec slack
