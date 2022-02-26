@@ -4,7 +4,7 @@ Wants=environment.target
 Before=environment.target
 
 [Service]
-ExecStart=/usr/bin/pulseaudio-dlna --daemonize=no
+ExecStart=/usr/bin/pulseaudio-dlna
 Restart=on-failure
 
 [Install]
