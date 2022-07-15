@@ -28,6 +28,8 @@
 	path = alias.d/clients
 	path = config.d/default
 	path = config.d/clients
+[includeIf "gitdir:~/work/"]
+	path = config.d/work
 [commit]
 	gpgSign = 1
 	verbose = 1
