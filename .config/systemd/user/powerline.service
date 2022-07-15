@@ -1,16 +1,10 @@
 [Unit]
-Description=Start Powerline Daemon
-IgnoreOnIsolate=true
-Wants=environment.target
-Before=environment.target
+Description=powerline-daemon - Daemon that improves powerline performance
+Documentation=man:powerline-daemon(1)
+Documentation=https://powerline.readthedocs.org/en/latest/
 
 [Service]
-Type=forking
-RemainAfterExit=yes
-ExecStart=/usr/bin/powerline-daemon
-ExecReload=/usr/bin/powerline-daemon --replace
-ExecStop=/usr/bin/powerline-daemon --kill
-Restart=on-abort
+ExecStart=/usr/bin/powerline-daemon --foreground
 
 [Install]
 WantedBy=default.target
